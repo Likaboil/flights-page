@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+    <div class="container">
+      <main class="container__main">
+        <h1 class="visually-hidden">Страница поиска рейсов</h1>
+        <aside class="page__left-column filters">
+          <h2 class="visually-hidden">Фильтрация по количеству пересадок</h2>
+          <form action="get" class="filters__form">
+            <fieldset class="filters__list">
+              <legend class="filters__title">Количество пересадок</legend>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check1" checked>
+                <label class="filters__label" for="check1"> Все</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check2">
+                <label class="filters__label" for="check2"> Без пересадок</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check3">
+                <label class="filters__label" for="check3"> 1 пересадка</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check4">
+                <label class="filters__label" for="check4"> 2 пересадки</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check5">
+                <label class="filters__label" for="check5"> 3 пересадки</label>
+              </div>
+            </fieldset>
+          </form>
+        </aside>
+        <div class="page__right-column">
+          <div class="tabs">
+            <h2 class="visually-hidden">Фильтрация по скорости перелета</h2>
+            <button class="tabs__item tabs__item--cheaper tabs__item--active">
+              <span class="tabs__text"> Самый дешевый</span>
+            </button>
+            <button class="tabs__item tabs__item--faster">
+              <span class="tabs__text"> Самый быстрый</span>
+            </button>
+            </form>
+          </div>
+          <div class="flights">
+            <p class="flights__loading">Подождите, загружаю рейсы</p>
+            <div class="logo logo__loading">
+              <img src="./img/logo-bg.svg" alt="" class="logo__bg" width="60" height="60">
+              <img src="./img/plane.svg" alt="" class="logo__upper">
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

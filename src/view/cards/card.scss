@@ -1,0 +1,56 @@
+.card {
+  display: block;
+  padding: 0 19px 13px 20px;
+  background-color: $white;
+  border-radius: 5px;
+  transition: opacity 0.2s ease-in;
+  @include boxshadow;
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px 18px 0;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    @include fonts(24px, 24px);
+    color: $blue;
+  }
+
+  &__logo {
+    margin-top: 20px;
+    @include size(110px, 36px);
+   }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0 7px;
+  }
+
+  &__description {
+    width: 141px;
+  }
+
+  &__subtitle {
+    line-height: 18px;
+    color: grey;
+    letter-spacing: 0.5px;
+    @include zeroIndents;
+  }
+
+  &__text {
+    @include fonts(14px, 21px);
+    color: black;
+
+    &--length {
+      text-transform: none;
+    }
+  }
+}

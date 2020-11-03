@@ -1,0 +1,18 @@
+.container {
+  margin: 50px auto;
+  padding: 0 103px;
+  width: 960px;
+
+  &__main{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-column {
+    @include size(232px, 252px);
+  }
+
+  &__right-column {
+    width: 502px;
+  }
+}

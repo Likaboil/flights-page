@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "indentation": 2,
+    "at-rule-name-space-after": "always",
+    "at-rule-semicolon-newline-after": "always",
+    "at-rule-semicolon-space-before": "never",
+    "selector-max-class": 2,
+    "unit-allowed-list": ["em","rem","%","px","vh","vm","vmax","vmin", "s", "deg"],
+    "comment-empty-line-before": ["always",
+      {
+      "except": ["first-nested"],
+      "ignore": ["after-comment", "stylelint-commands"]
+      }
+    ],
+  },
+  "ignoreFiles": ["**/*.svg"]
+}

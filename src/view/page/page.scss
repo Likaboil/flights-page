@@ -1,0 +1,21 @@
+.page {
+  font-family: 'Open Sans' sans-serif;
+  @include fonts(12px, 12px);
+  font-weight: 600;
+  color: $black;
+  text-transform: uppercase;
+  background-color: $pageBg;
+
+  &__main{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-column {
+    @include size(232px, 252px);
+  }
+
+  &__right-column {
+    width: 502px;
+  }
+}

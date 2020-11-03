@@ -1,0 +1,46 @@
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  @include size(503px, 50px);
+
+  &__item {
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    border: 1px solid $border;
+    background-color: $white;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &--cheaper {
+      width: 252px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &--faster {
+      width: 251px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &--active {
+      border: none;
+      background-color: $blue;
+    }
+  }
+
+  &__text {
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    &--active {
+      color: $white;
+    }
+  }
+}

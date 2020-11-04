@@ -1,0 +1,12 @@
+.flights {
+  margin-bottom: 108px;
+
+  &__card {
+    margin-bottom: 20px;
+  }
+
+  &__loading {
+    @include fonts(16px, 24px);
+    text-align: center;
+  }
+}

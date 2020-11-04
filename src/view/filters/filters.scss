@@ -1,0 +1,60 @@
+.filters {
+  background-color: $white;
+  border-radius: 5px;
+  cursor: pointer;
+  @include boxShadow;
+
+  &__form {
+    padding-bottom: 10px;
+  }
+
+  &__list {
+    border: 0;
+    @include zeroIndents;
+  }
+
+  &__title {
+    color: $black;
+    padding: 20px 20px 10px;
+    letter-spacing: 0.5px;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 10px 0;
+
+    &:hover {
+      background-color: $light-blue;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input + &__label::before {
+    background-image: url('../public/img/checkbox.svg');
+  }
+
+  &__input:checked + &__label::before {
+    background-image: url('../public/img/chekbox-on.svg');
+  }
+
+  &__label {
+    padding-left: 50px;
+    @include fonts(13px, 20px);
+    font-weight: 400;
+    text-transform: none;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      @include size(20px, 20px);
+      background-repeat: no-repeat;
+      background-color: transparent;
+    }
+  }
+}

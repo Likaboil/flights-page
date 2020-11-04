@@ -1,0 +1,16 @@
+.message {
+  padding: 50px;
+  @include size(502px, 170px);
+  background-color: $white;
+  color: $blue;
+  text-align: center;
+  text-transform: none;
+
+  &__title {
+    @include fonts(18px, 24px);
+  }
+
+  &__text {
+    @include fonts(16px, 24px);
+  }
+}

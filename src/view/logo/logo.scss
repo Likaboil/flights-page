@@ -1,0 +1,30 @@
+.logo {
+  position: relative;
+  margin: 0 auto;
+  @include size(60px, 60px);
+
+  &__bg {
+    position: absolute;
+    top: 0;
+  }
+
+  &__upper {
+    position: absolute;
+    @include size(37px, 35px);
+    top: 8px;
+    left: 10px;
+  }
+
+  @keyframes loading {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &--loading {
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}

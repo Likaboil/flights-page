@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Page</title>
+</head>
+
+<body class="page">
+  <div id="root">
+    <div class="container">
+      <header class="page__header">
+        <div class="logo">
+          <img src="./img/logo-bg.svg" alt="Логотип сайта" class="logo__bg" width="60" height="60">
+          <img src="./img/plane.svg" alt="Логотип сайта" class="logo__upper" width="37" height="35">
+        </div>
+      </header>
+    </div>
+    <div class="container">
+      <main class="page__main">
+        <h1 class="visually-hidden">Страница поиска рейсов</h1>
+        <aside class="page__left-column filters">
+          <h2 class="visually-hidden">Фильтрация по количеству пересадок</h2>
+          <form action="get" class="filters__form">
+            <fieldset class="filters__list">
+              <legend class="filters__title">Количество пересадок</legend>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check1" checked>
+                <label class="filters__label" for="check1"> Все</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check2">
+                <label class="filters__label" for="check2"> Без пересадок</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check3">
+                <label class="filters__label" for="check3"> 1 пересадка</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check4">
+                <label class="filters__label" for="check4"> 2 пересадки</label>
+              </div>
+              <div class="filters__wrapper">
+                <input class="filters__input" type="checkbox" value="" id="check5">
+                <label class="filters__label" for="check5"> 3 пересадки</label>
+              </div>
+            </fieldset>
+          </form>
+        </aside>
+        <div class="page__right-column">
+          <h2 class="visually-hidden">Фильтрация по скорости перелета</h2>
+          <ul class="tabs">
+            <li class="tabs__item tabs__item--cheaper tabs__item--active">
+              <a class="tabs__text"> Самый дешевый</a>
+            </li>
+            <li class="tabs__item tabs__item--faster">
+              <a class="tabs__text"> Самый быстрый</a>
+            </li>
+          </ul>
+          <div class="flights">
+            <ul class="flights__list">
+              <li class="flights__card card">
+                <div class="card__header">
+                  <p class="card__title">13 400 p</p>
+                  <img src="./img/s7logo.png" alt="Логотип авиакомпании" class="card__logo" width="110"
+                    height="36">
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">10:45 – 08:00</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">21ч 15м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">2 пересадки</p>
+                    <span class="card__text">HKG, JNB</span>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">11:20 – 00:50</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">13ч 30м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">1 пересадка</p>
+                    <span class="card__text">HKG</span>
+                  </div>
+                </div>
+              </li>
+              <li class="flights__card card">
+                <div class="card__header">
+                  <p class="card__title">13 400 p</p>
+                  <img src="./img/s7logo.png" alt="Логотип авиакомпании" class="card__logo" width="110"
+                    height="36">
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">10:45 – 08:00</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">21ч 15м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">2 пересадки</p>
+                    <span class="card__text">HKG, JNB</span>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">11:20 – 00:50</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">13ч 30м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">1 пересадка</p>
+                    <span class="card__text">HKG</span>
+                  </div>
+                </div>
+              </li>
+              <li class="flights__card card">
+                <div class="card__header">
+                  <p class="card__title">13 400 p</p>
+                  <img src="./img/s7logo.png" alt="Логотип авиакомпании" class="card__logo" width="110"
+                    height="36">
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">10:45 – 08:00</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">21ч 15м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">2 пересадки</p>
+                    <span class="card__text">HKG, JNB</span>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">11:20 – 00:50</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">13ч 30м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">1 пересадка</p>
+                    <span class="card__text">HKG</span>
+                  </div>
+                </div>
+              </li>
+              <li class="flights__card card">
+                <div class="card__header">
+                  <p class="card__title">13 400 p</p>
+                  <img src="./img/s7logo.png" alt="Логотип авиакомпании" class="card__logo" width="110"
+                    height="36">
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">10:45 – 08:00</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">21ч 15м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">2 пересадки</p>
+                    <span class="card__text">HKG, JNB</span>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__description">
+                    <p class="card__subtitle">MOW – HKT</p>
+                    <span class="card__text">11:20 – 00:50</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">В пути</p>
+                    <span class="card__text card__text--length">13ч 30м</span>
+                  </div>
+                  <div class="card__description">
+                    <p class="card__subtitle">1 пересадка</p>
+                    <span class="card__text">HKG</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,8 +1,7 @@
-import {Abstract} from '../abstract';
+import {AbstractView} from '../index';
 
 const createFiltersTemplate = () => {
-  return `
-    <aside class="filters">
+  return `<aside class="filters">
       <h2 class="visually-hidden">Фильтрация по количеству пересадок</h2>
       <form action="get" class="filters__form">
         <fieldset class="filters__list">
@@ -32,7 +31,7 @@ const createFiltersTemplate = () => {
     </aside>`;
 }
 
-export default class CreateFilters extends Abstract {
+export default class CreateFilters extends AbstractView{
   constructor() {
     super();
   }

@@ -1,7 +1,7 @@
-import {Abstract} from '../abstract';
+import {AbstractView} from '../index';
 
-const createPageContainerTemplate = () => {
-  return `
+const createPageTemplate = () => {
+  return `<div>
     <header class="page__header">
     </header>
     <main class="page__main">
@@ -10,15 +10,16 @@ const createPageContainerTemplate = () => {
       </div>
       <div class="page__right-column">
       </div>
-    </main>`;
+    </main>
+  </div>`;
 }
 
-export default class CreatePageContainer extends Abstract {
+export default class CreatePage extends AbstractView {
   constructor() {
     super();
   }
 
   getTemplate() {
-    return createPageContainerTemplate();
+    return createPageTemplate();
   }
 }

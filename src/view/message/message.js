@@ -1,8 +1,7 @@
-import {Abstract} from '../abstract';
+import {AbstractView} from '../index';
 
 const createMessageTemplate = () => {
-  return `
-    <div class="message">
+  return `<div class="message">
       <p class="message__title">По вашему запросу ничего не найдено!</p>
       <p class="message__text">Попробуйте изменить запрос.</p>
     </div>
@@ -11,7 +10,7 @@ const createMessageTemplate = () => {
     </div>`;
 }
 
-export default class CreateMessage extends Abstract {
+export default class CreateMessage extends AbstractView {
   constructor() {
     super();
   }

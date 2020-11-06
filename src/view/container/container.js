@@ -1,12 +1,10 @@
-import {Abstract} from '../abstract';
+import {AbstractView} from '../index';
 
 const createContainerTemplate = () => {
-  return  `
-  <div class="container">
-  </div>`;
+  return  `<div class="container"></div>`;
 }
 
-export default class CreateContainer extends Abstract {
+export default class CreateContainer extends AbstractView {
   constructor() {
     super();
   }

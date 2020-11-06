@@ -1,4 +1,5 @@
 import {AbstractView} from '../index';
+import {render, getElement, RenderPosition} from '../../utils/dom';
 
 const createPageTemplate = () => {
   return `<div>
@@ -21,5 +22,12 @@ export default class CreatePage extends AbstractView {
 
   getTemplate() {
     return createPageTemplate();
+  }
+
+  setFirstContainer(centerContainer){
+    this.getElement();
+    const container = document.querySelector('#root');
+    const element = getElement(centerContainer);
+    render(container, element, RenderPosition.BEFORE_END);
   }
 }

@@ -1,8 +1,7 @@
-import {Abstract} from '../abstract';
+import {AbstractView} from '../index';
 
 const createTabsTemplate = () => {
-  return `
-    <h2 class="visually-hidden">Фильтрация по скорости перелета</h2>
+  return `<h2 class="visually-hidden">Фильтрация по скорости перелета</h2>
     <ul class="tabs">
       <li class="tabs__item tabs__item--cheaper tabs__item--active">
         <a class="tabs__text tabs__text--active"> Самый дешевый</a>
@@ -13,7 +12,7 @@ const createTabsTemplate = () => {
     </ul`;
 }
 
-export default class CreateTabs extends Abstract {
+export default class CreateTabs extends AbstractView {
   constructor() {
     super();
   }

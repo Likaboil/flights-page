@@ -8,4 +8,8 @@ export default class FlightsPresenter {
     this._cardView = new CardView();
     this._pageView = new PageView();
   }
+
+  init() {
+    this._renderFlights();
+  }
 }

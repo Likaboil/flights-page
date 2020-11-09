@@ -43,3 +43,9 @@ export const render = (container, element, position = RenderPosition.BEFORE_END)
       throw new Error(`Unknown render position: ${position}`);
   }
 }
+
+export const clearElement = (element) => {
+  if(element.parentNode) {
+    element.parentNode.removeChild(element);
+  }
+}

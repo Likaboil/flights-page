@@ -11,4 +11,8 @@ export default class PagePresenter {
     this._tabsView = new TabsView();
     this._messageView = new MessageView();
   }
+
+  init() {
+    this._renderPage();
+  }
 }

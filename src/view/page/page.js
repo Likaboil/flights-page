@@ -21,4 +21,8 @@ export default class PageView extends AbstractView {
   getTemplate() {
     return createPageTemplate();
   }
+
+  getContainer(parentContainer) {
+    return document.querySelector(parentContainer);
+  }
 }

@@ -1,4 +1,5 @@
 import {PageView, ContainerView, LogoView, FiltersView, TabsView, MessageView} from '../view/index';
+import {getElement, render, RenderPosition} from '../utils/dom';
 
 export default class PagePresenter {
   constructor(container) {
@@ -14,5 +15,19 @@ export default class PagePresenter {
 
   init() {
     this._renderPage();
+  }
+
+  _renderPage() {
+    this._renderContainer(`#root`, this._containerView, RenderPosition.BEFORE_END);
+    this._renderContainer(`.container`, this._pageView, RenderPosition.BEFORE_END);
+    this._renderContainer(`.page__header`, this._logoView, RenderPosition.BEFORE_END);
+    this._renderContainer(`.page__left-column`, this._filtersView, RenderPosition.BEFORE_END);
+    this._renderContainer(`.page__right-column`, this._tabsView, RenderPosition.BEFORE_END);
+  }
+
+  _renderContainer(parentElement, elementView, position){
+    const container = this._pageView.getContainer(parentElement);
+    const element = getElement(elementView);
+    render(container, element, position);
   }
 }

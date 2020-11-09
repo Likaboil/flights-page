@@ -1,5 +1,6 @@
 import {PageView, ContainerView, LogoView, FiltersView, TabsView, MessageView} from '../view/index';
 import {getElement, render, RenderPosition} from '../utils/dom';
+import FlightsPresenter from './flights';
 
 export default class PagePresenter {
   constructor(container) {
@@ -11,10 +12,13 @@ export default class PagePresenter {
     this._filtersView = new FiltersView();
     this._tabsView = new TabsView();
     this._messageView = new MessageView();
+    this._flightsPresenter = new FlightsPresenter
   }
 
   init() {
     this._renderPage();
+    this._flightsPresenter.init();
+
   }
 
   _renderPage() {

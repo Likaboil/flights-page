@@ -1,5 +1,5 @@
 export {default as AbstractView} from './abstract'
-export {default as PageView} from './page/page';
+export {default as PageView, HeaderView, LeftColumnView, RightColumnView} from './page/page';
 export {default as ContainerView} from './container/container';
 export {default as LogoView} from './logo/logo';
 export {default as CardView} from './cards/cards';

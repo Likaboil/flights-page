@@ -7,6 +7,9 @@ export default class PagePresenter {
     this._container = container;
     this._isLoading = true;
     this._pageView = new PageView();
+    this._headerView = new HeaderView();
+    this._leftColumnView = new LeftColumnView();
+    this._rightColumnView = new RightColumnView();
     this._containerView = new ContainerView();
     this._logoView = new LogoView();
     this._filtersView = new FiltersView();

@@ -24,13 +24,13 @@ class HeaderView extends AbstractView {
 
 class LeftColumnView extends AbstractView {
   getTemplate() {
-    return createColumnTemplate(left);
+    return createColumnTemplate(`left`);
     }
 }
 
 class RightColumnView extends AbstractView {
   getTemplate() {
-    return createColumnTemplate(right);
+    return createColumnTemplate(`right`);
     }
 }
 

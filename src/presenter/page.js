@@ -1,4 +1,4 @@
-import {PageView, ContainerView, LogoView, FiltersView, TabsView, MessageView} from '../view/index';
+import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView} from '../view/index';
 import {getElement, render, RenderPosition} from '../utils/dom';
 import FlightsPresenter from './flights';
 

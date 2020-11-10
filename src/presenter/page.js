@@ -31,10 +31,4 @@ export default class PagePresenter {
     this._renderContainer(`.page__left-column`, this._filtersView, RenderPosition.BEFORE_END);
     this._renderContainer(`.page__right-column`, this._tabsView, RenderPosition.BEFORE_END);
   }
-
-  _renderContainer(parentElement, elementView, position){
-    const container = this._pageView.getContainer(parentElement);
-    const element = getElement(elementView);
-    render(container, element, position);
-  }
 }

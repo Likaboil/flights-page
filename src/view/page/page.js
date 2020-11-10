@@ -47,3 +47,7 @@ export default class PageView extends AbstractView {
     return document.querySelector(parentContainer);
   }
 }
+
+export {
+  HeaderView, LeftColumnView, RightColumnView
+};

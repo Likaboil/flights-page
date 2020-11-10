@@ -1,24 +1,28 @@
-import {Abstract} from '../abstract';
+import {AbstractView} from '../index';
 
-const createPageContainerTemplate = () => {
-  return `
-    <header class="page__header">
-    </header>
+const createPageTemplate = () => {
+  return (
+  `<div>
+    <header class="page__header"></header>
     <main class="page__main">
       <h1 class="visually-hidden">Страница поиска рейсов</h1>
-      <div class="page__left-column">
-      </div>
-      <div class="page__right-column">
-      </div>
-    </main>`;
+      <div class="page__left-column"></div>
+      <div class="page__right-column"></div>
+    </main>
+  </div>`
+  );
 }
 
-export default class CreatePageContainer extends Abstract {
+export default class PageView extends AbstractView {
   constructor() {
     super();
   }
 
   getTemplate() {
-    return createPageContainerTemplate();
+    return createPageTemplate();
+  }
+
+  getContainer(parentContainer) {
+    return document.querySelector(parentContainer);
   }
 }

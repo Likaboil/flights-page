@@ -1,8 +1,9 @@
-import {default as PageContainerView} from './view/container';
-import {default as ContainerView} from './view/container';
-import {default as LogoView} from './view/logo';
-import {default as CardView} from './view/cards';
-import {default as FiltersView} from './view/filters';
-import {default as FlightsView} from './view/flights';
-import {default as TabsView} from './view/tabs';
-import {default as MessageView} from './view/message';
+export {default as AbstractView} from './abstract'
+export {default as PageView} from './page/page';
+export {default as ContainerView} from './container/container';
+export {default as LogoView} from './logo/logo';
+export {default as CardView} from './cards/cards';
+export {default as FiltersView} from './filters/filters';
+export {default as FlightsView} from './flights/flights';
+export {default as TabsView} from './tabs/tabs';
+export {default as MessageView} from './message/message';

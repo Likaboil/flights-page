@@ -25,10 +25,13 @@ export default class PagePresenter {
   }
 
   _renderPage() {
-    this._renderContainer(`#root`, this._containerView, RenderPosition.BEFORE_END);
-    this._renderContainer(`.container`, this._pageView, RenderPosition.BEFORE_END);
-    this._renderContainer(`.page__header`, this._logoView, RenderPosition.BEFORE_END);
-    this._renderContainer(`.page__left-column`, this._filtersView, RenderPosition.BEFORE_END);
-    this._renderContainer(`.page__right-column`, this._tabsView, RenderPosition.BEFORE_END);
+    render(this._container, this._containerView, RenderPosition.BEFORE_END);
+    render(this._containerView, this._pageView, RenderPosition.BEFORE_END);
+    render(this._pageView, this._headerView, RenderPosition.BEFORE_BEGIN);
+    render(this._headerView, this._logoView, RenderPosition.BEFORE_END);
+    render(this._pageView, this._leftColumnView, RenderPosition.BEFORE_END);
+    render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);
+    render(this._pageView, this._rightColumnView, RenderPosition.BEFORE_END);
+    render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
   }
 }

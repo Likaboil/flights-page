@@ -24,6 +24,10 @@ export default class PagePresenter {
     this._renderPage();
   }
 
+  destroy() {
+    this._clearPage();
+  }
+
   _renderPage() {
     render(this._container, this._containerView, RenderPosition.BEFORE_END);
     render(this._containerView, this._pageView, RenderPosition.BEFORE_END);

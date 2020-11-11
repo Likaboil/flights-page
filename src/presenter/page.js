@@ -1,4 +1,4 @@
-import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView} from '../view/index';
+import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsItemView, CardView} from '../view/index';
 import {render, RenderPosition} from '../utils/dom';
 import FlightsPresenter from './flights';
 
@@ -21,7 +21,6 @@ export default class PagePresenter {
   init() {
     this._renderPage();
     this._flightsPresenter.init();
-
   }
 
   _renderPage() {

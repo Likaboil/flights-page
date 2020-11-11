@@ -36,3 +36,7 @@ export default class FlightsView extends AbstractView {
     return createFlightsTemplate();
   }
 }
+
+export {
+  FlightsListView, FlightsItemView
+};

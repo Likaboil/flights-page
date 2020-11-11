@@ -1,5 +1,5 @@
 import {FlightsView, CardView} from '../view/index.js';
-import {getElement, render, RenderPosition} from '../utils/dom.js';
+import {render, RenderPosition} from '../utils/dom.js';
 
 export default class FlightsPresenter {
   constructor(container) {

@@ -34,6 +34,7 @@ export default class PagePresenter {
     render(this._pageView, this._rightColumnView, RenderPosition.BEFORE_END);
     render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
     render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
+    this._renderCardsList();
   }
 
   _renderCardsList() {

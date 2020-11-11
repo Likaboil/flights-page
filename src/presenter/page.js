@@ -20,7 +20,6 @@ export default class PagePresenter {
 
   init() {
     this._renderPage();
-    this._flightsPresenter.init();
   }
 
   _renderPage() {

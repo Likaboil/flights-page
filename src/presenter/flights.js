@@ -1,4 +1,4 @@
-import {FlightsView, CardView} from '../view/index.js';
+import {FlightsView, CardView, FlightsListView, FlightsItemView} from '../view/index.js';
 import {render, RenderPosition} from '../utils/dom.js';
 
 export default class FlightsPresenter {

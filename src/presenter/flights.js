@@ -1,6 +1,8 @@
 import {FlightsView, CardView, FlightsListView, FlightsItemView} from '../view/index.js';
 import {render, RenderPosition} from '../utils/dom.js';
 
+const CARD_AMOUNT = 4;
+
 export default class FlightsPresenter {
   constructor(container) {
     this._container = container;
@@ -21,7 +23,7 @@ export default class FlightsPresenter {
   _renderCard() {
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END)
 
-    for (let i = 0; i <= 4; i++) {
+    for (let i = 0; i <= CARD_AMOUNT; i++) {
       const flightsItemView = new FlightsItemView();
       const cardView = new CardView();
 

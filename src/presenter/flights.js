@@ -14,7 +14,7 @@ export default class FlightsPresenter {
   }
 
   _renderFlights() {
-    this._renderContainer(`.page__right-column`, this._flightsView, RenderPosition.BEFORE_END);
+    render(this._container, this._flightsView, RenderPosition.BEFORE_END);
     this._renderCard();
   }
 

@@ -15,7 +15,8 @@ export default class PagePresenter {
     this._filtersView = new FiltersView();
     this._tabsView = new TabsView();
     this._messageView = new MessageView();
-    this._flightsPresenter = new FlightsPresenter(this._rightColumnView);
+    this._flightsView = new FlightsView();
+    this._flightsListView = new FlightsListView();
   }
 
   init() {

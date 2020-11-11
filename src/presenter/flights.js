@@ -17,12 +17,6 @@ export default class FlightsPresenter {
   _renderFlights() {
     this._renderContainer(`.page__right-column`, this._flightsView, RenderPosition.BEFORE_END);
     this._renderCard();
-
-  }
-   _renderContainer(parentElement, elementView, position){
-    const container = this._pageView.getContainer(parentElement);
-    const element = getElement(elementView);
-    render(container, element, position);
   }
 
   _renderCard() {

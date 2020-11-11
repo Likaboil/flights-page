@@ -33,4 +33,16 @@ export default class PagePresenter {
     render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
     render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
   }
+
+  _renderCardsList() {
+    render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
+
+    for (let i = 0; i < 4; i++) {
+      const flightsItemView = new FlightsItemView();
+      const cardView = new CardView();
+
+      render(this._flightsListView, flightsItemView, RenderPosition.BEFORE_END);
+      render(flightsItemView, cardView, RenderPosition.BEFORE_END);
+    }
+  }
 }

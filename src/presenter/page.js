@@ -1,6 +1,8 @@
 import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsItemView, CardView} from '../view/index';
 import {render, RenderPosition} from '../utils/dom';
 
+const CARD_AMOUNT = 4;
+
 export default class PagePresenter {
   constructor(container) {
     this._container = container;
@@ -37,7 +39,7 @@ export default class PagePresenter {
   _renderCardsList() {
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < CARD_AMOUNT; i++) {
       const flightsItemView = new FlightsItemView();
       const cardView = new CardView();
 

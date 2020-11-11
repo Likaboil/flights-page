@@ -6,7 +6,7 @@ export default class FlightsPresenter {
     this._container = container;
     this._isLoading = true;
     this._flightsView = new FlightsView();
-    this._cardView = new CardView();
+    this._flightsListView = new FlightsListView();
   }
 
   init() {

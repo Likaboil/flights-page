@@ -19,11 +19,14 @@ export default class FlightsPresenter {
   }
 
   _renderCard() {
-    const containers = document.querySelectorAll(`.flights__card`);
+    render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END)
 
-    for (const container of containers) {
+    for (let i = 0; i <= 4; i++) {
+      const flightsItemView = new FlightsItemView();
       const cardView = new CardView();
-      render(container, cardView, RenderPosition.BEFORE_END)
+
+      render(this._flightsListView, flightsItemView, RenderPosition.BEFORE_END);
+      render(flightsItemView, cardView, RenderPosition.BEFORE_END);
     }
   }
 }

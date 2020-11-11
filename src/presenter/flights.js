@@ -1,4 +1,4 @@
-import {FlightsView, CardView, PageView} from '../view/index.js';
+import {FlightsView, CardView} from '../view/index.js';
 import {getElement, render, RenderPosition} from '../utils/dom.js';
 
 export default class FlightsPresenter {
@@ -7,7 +7,6 @@ export default class FlightsPresenter {
     this._isLoading = true;
     this._flightsView = new FlightsView();
     this._cardView = new CardView();
-    this._pageView = new PageView();
   }
 
   init() {

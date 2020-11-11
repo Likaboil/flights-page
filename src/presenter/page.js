@@ -52,4 +52,8 @@ export default class PagePresenter {
       render(flightsItemView, cardView, RenderPosition.BEFORE_END);
     }
   }
+
+  _clearPage() {
+
+  }
 }

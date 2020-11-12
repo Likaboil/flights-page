@@ -1,19 +1,16 @@
 import {AbstractView} from '../index';
 
 const createFlightsTemplate = () => {
-  return (
-    `<div class="flights">
-    </div>`
-    );
-}
+  return `<div class="flights"></div>`;
+};
 
 const createFlightsList = () => {
-  return (`<ul class="flights__list"></ul>`);
-}
+  return `<ul class="flights__list"></ul>`;
+};
 
 const createFlightsItem = () => {
-  return (`<li class="flights__card card"></li>`);
-}
+  return `<li class="flights__card card"></li>`;
+};
 
 class FlightsListView extends AbstractView {
   getTemplate() {
@@ -28,9 +25,6 @@ class FlightsItemView extends AbstractView {
 }
 
 export default class FlightsView extends AbstractView {
-  constructor() {
-    super();
-  }
 
   getTemplate() {
     return createFlightsTemplate();

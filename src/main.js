@@ -3,6 +3,7 @@ import './style.scss';
 
 import {default as Page} from './presenter/page.js';
 
-const newPage = new Page();
+const rootElement = document.querySelector(`#root`);
+const newPage = new Page(rootElement);
 
 newPage.init();

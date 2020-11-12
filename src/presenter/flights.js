@@ -1,13 +1,14 @@
-import {FlightsView, CardView, PageView} from '../view/index.js';
-import {getElement, render, RenderPosition} from '../utils/dom.js';
+import {FlightsView, CardView, FlightsListView, FlightsItemView} from '../view/index.js';
+import {render, RenderPosition} from '../utils/dom.js';
+
+const CARD_AMOUNT = 4;
 
 export default class FlightsPresenter {
   constructor(container) {
     this._container = container;
     this._isLoading = true;
     this._flightsView = new FlightsView();
-    this._cardView = new CardView();
-    this._pageView = new PageView();
+    this._flightsListView = new FlightsListView();
   }
 
   init() {
@@ -15,22 +16,19 @@ export default class FlightsPresenter {
   }
 
   _renderFlights() {
-    this._renderContainer(`.page__right-column`, this._flightsView, RenderPosition.BEFORE_END);
+    render(this._container, this._flightsView, RenderPosition.BEFORE_END);
     this._renderCard();
-
-  }
-   _renderContainer(parentElement, elementView, position){
-    const container = this._pageView.getContainer(parentElement);
-    const element = getElement(elementView);
-    render(container, element, position);
   }
 
   _renderCard() {
-    const containers = document.querySelectorAll(`.flights__card`);
+    render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END)
 
-    for (const container of containers) {
+    for (let i = 0; i <= CARD_AMOUNT; i++) {
+      const flightsItemView = new FlightsItemView();
       const cardView = new CardView();
-      render(container, cardView, RenderPosition.BEFORE_END)
+
+      render(this._flightsListView, flightsItemView, RenderPosition.BEFORE_END);
+      render(flightsItemView, cardView, RenderPosition.BEFORE_END);
     }
   }
 }

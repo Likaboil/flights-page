@@ -45,7 +45,6 @@ export const render = (container, element, position = RenderPosition.BEFORE_END)
 }
 
 export const clearElement = (element) => {
-  if(element.parentNode) {
-    element.parentNode.removeChild(element);
-  }
-}
+  element.getElement().remove();
+  element = null;
+};

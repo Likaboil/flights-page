@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack",
-    "eslint": " eslint src/**/*.js",
+    "eslint": "eslint src/**/*.js",
     "start": "webpack serve",
     "test": "npm run eslint"
   },

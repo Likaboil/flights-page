@@ -1,5 +1,5 @@
 import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsItemView, CardView} from '../view/index';
-import {render, RenderPosition} from '../utils/dom';
+import {clearElement, render, RenderPosition} from '../utils/dom';
 
 const CARD_AMOUNT = 4;
 
@@ -54,6 +54,10 @@ export default class PagePresenter {
   }
 
   _clearPage() {
+    this._clearFlightsList();
+  }
 
+  _clearFlightsList() {
+    clearElement(this._flightsListView);
   }
 }

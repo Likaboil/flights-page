@@ -60,4 +60,11 @@ export default class PagePresenter {
   _clearFlightsList() {
     clearElement(this._flightsListView);
   }
+
+  _remove(element) {
+    if (element) {
+      clearElement(element);
+      element = null;
+    }
+  }
 }

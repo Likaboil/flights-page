@@ -39,6 +39,17 @@ export default class PagePresenter {
     this._renderContent();
   }
 
+  _renderContent() {
+    render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
+
+    if (this._isLoading) {
+      this._renderMessage(`Jdfdf`, `fdfdf`); // TODO вставить параметры для вывода сообщения о загрузке
+      return;
+    }
+
+    this._renderCardsList();
+  }
+
   _renderCardsList() {
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
 

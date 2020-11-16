@@ -55,6 +55,14 @@ export default class PagePresenter {
 
   _clearPage() {
     this._clearFlightsList();
+    this._remove(this._tabsView);
+    this._remove(this._rightColumnView);
+    this._remove(this._filtersView);
+    this._remove(this._leftColumnView);
+    this._remove(this._logoView);
+    this._remove(this._headerView);
+    this._remove(this._pageView);
+    this._remove(this._containerView);
   }
 
   _clearFlightsList() {

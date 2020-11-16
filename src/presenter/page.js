@@ -62,6 +62,11 @@ export default class PagePresenter {
     }
   }
 
+  _renderMessage(title = ``, text = ``) {
+    this._messageView = new MessageView(title, text);
+    render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
+  }
+
   _clearPage() {
     this._clearFlightsList();
     this._remove(this._tabsView);

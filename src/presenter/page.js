@@ -44,7 +44,7 @@ export default class PagePresenter {
     render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
 
     if (this._isLoading) {
-      this._renderMessage(`Jdfdf`, `fdfdf`); // TODO вставить параметры для вывода сообщения о загрузке
+      this._renderMessage(MESSAGE.LOADING.title, MESSAGE.LOADING.text);
       return;
     }
 

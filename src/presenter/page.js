@@ -84,6 +84,11 @@ export default class PagePresenter {
     this._remove(this._messageView);
   }
 
+  _updateContent() {
+    this._clearContent();
+    this._renderCardsList();
+  }
+
   _remove(element) {
     if (element) {
       clearElement(element);

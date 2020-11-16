@@ -6,7 +6,7 @@ const CARD_AMOUNT = 4;
 export default class PagePresenter {
   constructor(container) {
     this._container = container;
-    this._isLoading = true;
+    this._isLoading = false;
     this._pageView = new PageView();
     this._headerView = new HeaderView();
     this._leftColumnView = new LeftColumnView();

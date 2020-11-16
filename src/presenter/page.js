@@ -80,7 +80,8 @@ export default class PagePresenter {
   }
 
   _clearContent() {
-    clearElement(this._flightsListView);
+    this._remove(this._flightsListView);
+    this._remove(this._messageView);
   }
 
   _remove(element) {

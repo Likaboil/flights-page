@@ -68,7 +68,7 @@ export default class PagePresenter {
   }
 
   _clearPage() {
-    this._clearFlightsList();
+    this._clearContent();
     this._remove(this._tabsView);
     this._remove(this._rightColumnView);
     this._remove(this._filtersView);
@@ -79,7 +79,7 @@ export default class PagePresenter {
     this._remove(this._containerView);
   }
 
-  _clearFlightsList() {
+  _clearContent() {
     clearElement(this._flightsListView);
   }
 

@@ -1,5 +1,6 @@
 import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsItemView, CardView} from '../view/index';
 import {clearElement, render, RenderPosition} from '../utils/dom';
+import {MESSAGE} from "../const";
 
 const CARD_AMOUNT = 4;
 

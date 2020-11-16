@@ -1,23 +1,22 @@
 import {AbstractView} from '../index';
 
-const createMessageTemplate = () => {
+const createMessageTemplate = (title = ``, text = ``) => {
   return (
-  `<div class="message">
-    <p class="message__title">По вашему запросу ничего не найдено!</p>
-    <p class="message__text">Попробуйте изменить запрос.</p>
-  </div>
-  <div class="message">
-    <p class="message__text">Подождите, загружаю рейсы</p>
-  </div>`
+    `<div class="message">
+      <p class="message__title">${title}</p>
+      <p class="message__text">${text}</p>
+    </div>`
   );
-}
+};
 
 export default class MessageView extends AbstractView {
-  constructor() {
+  constructor(title, text) {
     super();
+    this.title = title;
+    this.text = text;
   }
 
   getTemplate() {
-    return createMessageTemplate();
+    return createMessageTemplate(this.title, this.text);
   }
 }

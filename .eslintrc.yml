@@ -9,4 +9,3 @@ parserOptions:
   sourceType: 'module'
 
 extends: 'htmlacademy/es6'
-         'eslint:recommended'

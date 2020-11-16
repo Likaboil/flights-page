@@ -20,7 +20,7 @@ export const getElement = (element) => {
   }
 
   return element;
-}
+};
 
 export const render = (container, element, position = RenderPosition.BEFORE_END) => {
   container = getElement(container);
@@ -42,10 +42,9 @@ export const render = (container, element, position = RenderPosition.BEFORE_END)
     default:
       throw new Error(`Unknown render position: ${position}`);
   }
-}
+};
 
 export const clearElement = (element) => {
-  if(element.parentNode) {
-    element.parentNode.removeChild(element);
-  }
-}
+  element.getElement().remove();
+  element = null;
+};

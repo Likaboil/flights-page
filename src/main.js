@@ -6,6 +6,6 @@ import {FLIGHTS} from './const';
 
 const rootElement = document.querySelector(`#root`);
 const FlightsModel = FLIGHTS;
-const newPage = new Page(rootElement);
+const newPage = new Page(rootElement, FlightsModel);
 
 newPage.init();

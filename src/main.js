@@ -5,6 +5,7 @@ import {default as Page} from './presenter/page.js';
 import {FLIGHTS} from './const';
 
 const rootElement = document.querySelector(`#root`);
+const FlightsModel = FLIGHTS;
 const newPage = new Page(rootElement);
 
 newPage.init();

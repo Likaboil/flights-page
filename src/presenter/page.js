@@ -2,8 +2,6 @@ import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, Lo
 import {clearElement, render, RenderPosition} from '../utils/dom';
 import {MESSAGE} from "../const";
 
-const CARD_AMOUNT = 4;
-
 export default class PagePresenter {
   constructor(container, model) {
     this._container = container;

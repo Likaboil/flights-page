@@ -54,7 +54,7 @@ export default class PagePresenter {
 
   _renderCardsList() {
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
-
+    const models = this._fligthsModel;
     for (let i = 0; i < CARD_AMOUNT; i++) {
       const flightsItemView = new FlightsItemView();
       const cardView = new CardView();

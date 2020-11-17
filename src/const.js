@@ -47,7 +47,7 @@ export const FLIGHTS = [
   {
     id: `3`,
     price: `16 600`,
-    airCompanyLogo: `turkish.png`,
+    airCompanyLogo: `turkish`,
     airCompanyName: `Логотип авиакомпании TurkishAirlines`,
     departurePont: `MOW`,
     directDepurtureTime: moment(`2020-11-20 04:25`, `YYYY-MM-DD HH:mm`),

@@ -5,8 +5,9 @@ import {MESSAGE} from "../const";
 const CARD_AMOUNT = 4;
 
 export default class PagePresenter {
-  constructor(container) {
+  constructor(container, model) {
     this._container = container;
+    this._fligthsModel = model;
     this._isLoading = false;
     this._pageView = new PageView();
     this._headerView = new HeaderView();

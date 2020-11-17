@@ -1,38 +1,38 @@
 import {AbstractView} from '../index';
 
-const createCardTemplate = () => {
+const createCardTemplate = (item) => {
   return (
     `<div>
       <div class="card__header">
-        <p class="card__title">13 400 p</p>
-        <img src="./img/s7logo.png" alt="Логотип авиакомпании" class="card__logo" width="110" height="36">
+        <p class="card__title">${item.price} p</p>
+        <img src="./img/${item.airCompanyLogo}.png" alt="${item.airCompanyName}" class="card__logo" width="110" height="36">
       </div>
       <div class="card__row">
         <div class="card__description">
-          <p class="card__subtitle">MOW – HKT</p>
-          <span class="card__text">10:45 – 08:00</span>
+          <p class="card__subtitle">${item.departurePont}–${item.arrivingPont}</p>
+          <span class="card__text">${item.directDepurtureTime} – ${item. directArrivingTime}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
-          <span class="card__text card__text--length">21ч 15м</span>
+          <span class="card__text card__text--length">${item.directFlightDuration}</span>
         </div>
         <div class="card__description">
-          <p class="card__subtitle">2 пересадки</p>
-          <span class="card__text">HKG, JNB</span>
+          <p class="card__subtitle">${item.directTransfersAmount}</p>
+          <span class="card__text">${item.directTransferPoint}</span>
         </div>
       </div>
       <div class="card__row">
         <div class="card__description">
-          <p class="card__subtitle">MOW – HKT</p>
-          <span class="card__text">11:20 – 00:50</span>
+          <p class="card__subtitle">${item.arrivingPont}–${item.departurePont}</p>
+          <span class="card__text">${item.returnDepurtureTime} – ${item.returnArrivingTime}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
-          <span class="card__text card__text--length">13ч 30м</span>
+          <span class="card__text card__text--length">${item.returnFlightDuration}</span>
         </div>
         <div class="card__description">
-          <p class="card__subtitle">1 пересадка</p>
-          <span class="card__text">HKG</span>
+          <p class="card__subtitle">${item.returnTransfersAmount}</p>
+          <span class="card__text">${item.returnTransferPoint}</span>
         </div>
       </div>
     </div>`

@@ -22,3 +22,14 @@ export const getFormatDurationToDHM = (ms) => {
     minutes: duration.minutes(ms),
   };
 };
+
+export const getFlightDuration = (startDate, endDate) => {
+  const flightTimeInMs = getFlightDurationInMs(startDate, endDate);
+  const flightTime = getFormatDurationToDHM(flightTimeInMs);
+
+  if (flightTime.days > 0) {
+    return `${flightTime.days}д ${flightTime.hours}ч ${flightTime.minutes}м`;
+  }
+
+  return `${flightTime.hours}ч ${flightTime.minutes}м`;
+};

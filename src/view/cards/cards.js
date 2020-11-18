@@ -14,10 +14,10 @@ const createCardTemplate = (item) => {
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
-          <span class="card__text card__text--length">21ч 15м</span>
+          <span class="card__text card__text--length">${item.directFlight.flightDuration}</span>
         </div>
         <div class="card__description">
-          <p class="card__subtitle">2 пересадки</p>
+          <p class="card__subtitle">${item.directFlight.transferAmount}</p>
           <span class="card__text">${item.directFlight.transferPoint}</span>
         </div>
       </div>
@@ -28,10 +28,10 @@ const createCardTemplate = (item) => {
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
-          <span class="card__text card__text--length">13ч 30м</span>
+          <span class="card__text card__text--length">${item.returnFlight.flightDuration}</span>
         </div>
         <div class="card__description">
-          <p class="card__subtitle">1 пересадка</p>
+          <p class="card__subtitle">${item.returnFlight.transferAmount}</p>
           <span class="card__text">${item.returnFlight.transferPoint}</span>
         </div>
       </div>

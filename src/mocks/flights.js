@@ -49,7 +49,7 @@ export const FLIGHTS = [
       arrivalPoint: `HKT`,
       depurtureTime: `2020-11-20 04:25`,
       arrivalTime: `2020-11-22 17:00`,
-      transferPoint: [`BKK, DOH, IST`],
+      transferPoint: [`BKK`, `DOH`, `IST`],
     },
     returnFlight: {
       departurePoint: `HKT`,

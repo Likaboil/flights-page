@@ -40,8 +40,11 @@ const createCardTemplate = (item) => {
 };
 
 export default class CardView extends AbstractView {
-
+  constructor(flight) {
+    super();
+    this._flight = flight;
+  }
   getTemplate() {
-    return createCardTemplate();
+    return createCardTemplate(this._flight);
   }
 }

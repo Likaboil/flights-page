@@ -6,6 +6,6 @@ import {FLIGHTS} from './mocks/flights';
 
 const rootElement = document.querySelector(`#root`);
 const FLIGHTS_MODEL = FLIGHTS;
-const newPage = new Page(rootElement);
+const newPage = new Page(rootElement, FLIGHTS_MODEL);
 
 newPage.init();

@@ -53,11 +53,11 @@ export default class PagePresenter {
   _renderCardsList() {
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
 
-    const models = this._fligthsModel;
+    const flights = this._fligthsModel;
 
-    for (let model of models) {
+    for (let flight of flights) {
       const flightsItemView = new FlightsItemView();
-      const cardView = new CardView(model);
+      const cardView = new CardView(flight);
 
       render(this._flightsListView, flightsItemView, RenderPosition.BEFORE_END);
       render(flightsItemView, cardView, RenderPosition.BEFORE_END);

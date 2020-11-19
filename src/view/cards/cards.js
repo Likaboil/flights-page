@@ -3,10 +3,13 @@ import {splitPrice, getTransferPoints, getTransferAmountLabel} from '../../utils
 import {getFormatDateToHHMM, getFlightDurationLabel} from '../../utils/date';
 
 const createCardTemplate = (flight) => {
+
+  const price = splitPrice(flight.price);
+
   return (
     `<div>
       <div class="card__header">
-        <p class="card__title">${flight.price} p</p>
+        <p class="card__title">${price} p</p>
         <img src="./img/${flight.airCompanyLogo}.png" alt="Логотип авиакомпании ${flight.airCompanyName}" class="card__logo" width="110" height="36">
       </div>
       <div class="card__row">

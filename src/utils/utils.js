@@ -8,3 +8,17 @@ export const splitPrice = (price) => {
 export const getTransferPoints = (transferPoint) => transferPoint.join(`, `);
 
 export const getTransferAmount = (transferPoint) => transferPoint.length;
+
+export const getTransferAmountLabel = (transferPoint) => {
+  const transferAmount = getTransferAmount(transferPoint);
+
+  if (transferAmount % 10 === 0 && transferAmount !== 10) {
+    return ENDING_OF_TRANSFER_AMOUNT_LABEL[0];
+  } else if (transferAmount % 10 === 1 && transferAmount !== 11) {
+    return `${transferAmount} ${ENDING_OF_TRANSFER_AMOUNT_LABEL[1]}`;
+  } else if (transferAmount % 10 > 1 && transferAmount % 10 < 5) {
+    return `${transferAmount} ${ENDING_OF_TRANSFER_AMOUNT_LABEL[2]}`;
+  }
+
+  return `${transferAmount} ${ENDING_OF_TRANSFER_AMOUNT_LABEL[3]}`;
+};

@@ -3,9 +3,9 @@ import {clearElement, render, RenderPosition} from '../utils/dom';
 import {MESSAGE} from "../const";
 
 export default class PagePresenter {
-  constructor(container, model) {
+  constructor(container, flightModel) {
     this._container = container;
-    this._fligthsModel = model;
+    this._fligthsModel = flightModel;
     this._isLoading = false;
     this._pageView = new PageView();
     this._headerView = new HeaderView();

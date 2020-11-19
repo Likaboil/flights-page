@@ -4,3 +4,5 @@ export const splitPrice = (price) => {
 };
 
 export const getTransferPoints = (transferPoint) => transferPoint.join(`, `);
+
+export const getTransferAmount = (transferPoint) => transferPoint.length;

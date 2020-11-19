@@ -1,4 +1,6 @@
 import {AbstractView} from '../index';
+import {splitPrice, getTransferPoints, getTransferAmountLabel} from '../../utils/utils';
+import {getFormatDateToHHMM, getFlightDurationLabel} from '../../utils/date';
 
 const createCardTemplate = (flight) => {
   return (

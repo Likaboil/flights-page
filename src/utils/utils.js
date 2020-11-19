@@ -5,9 +5,9 @@ export const splitPrice = (price) => {
   return `${priceString.slice(0, 2)} ${priceString.slice(2, 5)} ${priceString.slice(5, 8)}`;
 };
 
-export const getTransferPoints = (transferPoint) => transferPoint.join(`, `);
+export const getTransferPoints = (transferPoints) => transferPoints.join(`, `);
 
-export const getTransferAmount = (transferPoint) => transferPoint.length;
+export const getTransferAmount = (transferPoints) => transferPoints.length;
 
 export const getTransferAmountLabel = (transferPoint) => {
   const transferAmount = getTransferAmount(transferPoint);

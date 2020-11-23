@@ -1,6 +1,6 @@
 import {AbstractView} from '../index';
 
-const createMessageTemplate = (title = ``, text = ``) => {
+const createMessageTemplate = (title, text) => {
   return (
     `<div class="message">
       <p class="message__title">${title}</p>

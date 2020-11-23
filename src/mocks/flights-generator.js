@@ -1,5 +1,11 @@
 import {getRandomInt, getRandomArrayValue, getRandomArray, getRandomDate} from '../utils/randomiser';
 
+const moveDateConfig = {
+  minutes: 60,
+  hours: 10,
+  days: 2,
+};
+
 const FLIGHTS_POINTS = {
   first: `MOW`,
   second: `HKT`,
@@ -19,3 +25,23 @@ const AIR_COMPANY = [
 ];
 
 const extend = (a, ...b) => Object.assign({}, a, ...b);
+
+const generateFlight = () => {
+  const DirectDateStart = new Date();
+  const DirectDateEnd = getRandomDate(extend(
+      moveDateConfig,
+      {
+        date: DirectDateStart,
+      }
+  ));
+
+  const ReturnDateStart = new Date(DirectDateStart);
+  ReturnDateStart.setDate(ReturnDateStart.getDate() + 7);
+  const ReturnDateEnd = getRandomDate(extend(
+      moveDateConfig,
+      {
+        date: ReturnDateStart,
+      }
+  ));
+
+};

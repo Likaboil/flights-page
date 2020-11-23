@@ -45,4 +45,17 @@ const generateFlight = () => {
       }
   ));
 
+  return {
+    id: nanoid(),
+    airCompany: getRandomArrayValue(AIR_COMPANY),
+    price: getRandomInt(10000, 20000),
+    firstStartDate: DirectDateStart,
+    firstEndDate: DirectDateEnd,
+    secondStartDate: ReturnDateStart,
+    secondEndDate: ReturnDateEnd,
+    firstPoint: FLIGHTS_POINTS.first,
+    secondPoint: FLIGHTS_POINTS.second,
+    firstTransferPoints: getRandomArray(TRANSFER_POINTS, getRandomInt(0, 4)),
+    secondTransferPoints: getRandomArray(TRANSFER_POINTS, getRandomInt(0, 4)),
+  };
 };

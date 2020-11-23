@@ -15,3 +15,5 @@ const AIR_COMPANY = [
     logo: `s7logo.png`,
   }
 ];
+
+const extend = (a, ...b) => Object.assign({}, a, ...b);

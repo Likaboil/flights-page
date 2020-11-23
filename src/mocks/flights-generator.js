@@ -1,3 +1,4 @@
+import {nanoid} from 'nanoid';
 import {getRandomInt, getRandomArrayValue, getRandomArray, getRandomDate} from '../utils/randomiser';
 
 const moveDateConfig = {

@@ -12,29 +12,10 @@ const createHeaderTemplate = () => {
   return `<header class="page__header"></header></div>`;
 };
 
-const createColumnTemplate = (position) => {
-  return `<div class="page__${position}-column"></div>`;
-};
-
-
-class HeaderView extends AbstractView {
+export class HeaderView extends AbstractView {
 
   getTemplate() {
     return createHeaderTemplate();
-  }
-}
-
-class LeftColumnView extends AbstractView {
-
-  getTemplate() {
-    return createColumnTemplate(`left`);
-  }
-}
-
-class RightColumnView extends AbstractView {
-
-  getTemplate() {
-    return createColumnTemplate(`right`);
   }
 }
 
@@ -44,7 +25,3 @@ export default class PageView extends AbstractView {
     return createPageTemplate();
   }
 }
-
-export {
-  HeaderView, LeftColumnView, RightColumnView
-};

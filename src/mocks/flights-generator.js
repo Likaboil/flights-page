@@ -59,3 +59,5 @@ const generateFlight = () => {
     secondTransferPoints: getRandomArray(TRANSFER_POINTS, getRandomInt(0, 4)),
   };
 };
+
+export const generateFlights = (count) => new Array(count).fill().map(generateFlight);

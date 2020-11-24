@@ -9,7 +9,7 @@ const rootElement = document.querySelector(`#root`);
 
 const NEW_FLIGHTS = generateFlights(5);
 
-const FLIGHTS_MODEL = FLIGHTS;
+const FLIGHTS_MODEL = adaptFlightsToClient(NEW_FLIGHTS);
 
 const newPage = new PagePresenter(rootElement, FLIGHTS_MODEL);
 newPage.init();

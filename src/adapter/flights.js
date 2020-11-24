@@ -21,3 +21,5 @@ export const adaptFlight = (newFlight) => {
     },
   };
 };
+
+export const adaptFlightToClient = (flight) => adaptFlight(flight);

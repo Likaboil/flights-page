@@ -6,23 +6,23 @@ const createCardTemplate = (flight) => {
 
   const price = splitPrice(flight.price);
 
-  const directDepartureTime = getFormatDateToHHMM(flight.directFlight.depurtureTime);
+  const directDepartureTime = getFormatDateToHHMM(flight.directFlight.departureTime);
   const directArrivalTime = getFormatDateToHHMM(flight.directFlight.arrivalTime);
   const directTransferPoints = getTransferPoints(flight.directFlight.transferPoints);
   const directTransferAmount = getTransferAmountLabel(flight.directFlight.transferPoints);
-  const directFlightDuration = getFlightDurationLabel(flight.directFlight.depurtureTime, flight.directFlight.arrivalTime);
+  const directFlightDuration = getFlightDurationLabel(flight.directFlight.departureTime, flight.directFlight.arrivalTime);
 
-  const returnDepartureTime = getFormatDateToHHMM(flight.returnFlight.depurtureTime);
+  const returnDepartureTime = getFormatDateToHHMM(flight.returnFlight.departureTime);
   const returnArrivalTime = getFormatDateToHHMM(flight.returnFlight.arrivalTime);
   const returnTransferPoints = getTransferPoints(flight.returnFlight.transferPoints);
   const returnTransferAmount = getTransferAmountLabel(flight.returnFlight.transferPoints);
-  const returnFlightDuration = getFlightDurationLabel(flight.returnFlight.depurtureTime, flight.returnFlight.arrivalTime);
+  const returnFlightDuration = getFlightDurationLabel(flight.returnFlight.departureTime, flight.returnFlight.arrivalTime);
 
   return (
     `<div>
       <div class="card__header">
         <p class="card__title">${price} p</p>
-        <img src="./img/${flight.airCompanyLogo}.png" alt="Логотип авиакомпании ${flight.airCompanyName}" class="card__logo" width="110" height="36">
+        <img src="./img/${flight.airCompanyLogo}" alt="Логотип авиакомпании ${flight.airCompanyName}" class="card__logo" width="110" height="36">
       </div>
       <div class="card__row">
         <div class="card__description">

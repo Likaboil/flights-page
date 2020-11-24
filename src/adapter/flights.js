@@ -23,3 +23,5 @@ export const adaptFlight = (newFlight) => {
 };
 
 export const adaptFlightToClient = (flight) => adaptFlight(flight);
+
+export const adaptFlightsToClient = (flights) => flights.map(adaptFlightToClient);

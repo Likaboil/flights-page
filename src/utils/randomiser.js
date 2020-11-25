@@ -1,5 +1,6 @@
 import {MINUTE, HOUR, DAY} from '../const';
 
+export const getRandomBool = () => Math.random() > 0.5;
 export const getRandomInt = (min, max) => min + Math.floor(Math.random() * (max - min));
 export const getRandomArrayValue = (arr) => arr[Math.floor(Math.random() * arr.length)];
 export const getRandomArray = (arr, length = arr.length) => arr

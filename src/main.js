@@ -1,9 +1,12 @@
 import 'normalize.css';
 import './style.scss';
 
-import {default as Page} from './presenter/page.js';
+import {default as PagePresenter} from './presenter/page.js';
+import {generateFlights} from './mocks/flights-generator';
+import {adaptFlightsToClient} from './adapter/flights';
 
 const rootElement = document.querySelector(`#root`);
-const newPage = new Page(rootElement);
+const FLIGHTS_MODEL = adaptFlightsToClient(generateFlights(5));
 
-newPage.init();
+const pagePresenter = new PagePresenter(rootElement, FLIGHTS_MODEL);
+pagePresenter.init();

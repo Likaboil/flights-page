@@ -5,6 +5,7 @@ const {CleanWebpackPlugin} = require(`clean-webpack-plugin`);
 const StylelintPlugin = require(`stylelint-webpack-plugin`);
 const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
 const CssMinimizerPlugin = require(`css-minimizer-webpack-plugin`);
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 
 module.exports = {
@@ -34,6 +35,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `style.min.css`,
       path: path.join(__dirname, `build`),
+    }),
+    new MomentLocalesPlugin({
+      localesToKeep: ['es-us', 'ru'],
     }),
   ],
   module: {

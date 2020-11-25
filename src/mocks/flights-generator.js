@@ -32,4 +32,18 @@ const generateFlight = () => {
   const ReturnDateStart = new Date(DirectDateStart);
   ReturnDateStart.setDate(ReturnDateStart.getDate() + 7);
   const ReturnDateEnd = getRandomDate({ReturnDateStart, moveDateConfig});
+
+  return {
+    id: nanoid(),
+    airCompany: getRandomArrayValue(AIR_COMPANY),
+    price: getRandomInt(10000, 20000),
+    firstStartDate: DirectDateStart,
+    firstEndDate: DirectDateEnd,
+    secondStartDate: ReturnDateStart,
+    secondEndDate: ReturnDateEnd,
+    firstPoint: FLIGHTS_POINTS.FIRST_POINT,
+    secondPoint: FLIGHTS_POINTS.SECOND_POINT,
+    firstTransferPoints: getRandomArray(TRANSFER_POINTS, getRandomInt(0, 4)),
+    secondTransferPoints: getRandomArray(TRANSFER_POINTS, getRandomInt(0, 4)),
+  };
 };

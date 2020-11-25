@@ -49,7 +49,7 @@ export default class PagePresenter {
       return;
     }
 
-    this._renderCardsList();
+    this._renderFlightsList();
   }
 
   _renderFlightsList() {
@@ -97,7 +97,7 @@ export default class PagePresenter {
 
   _updateContent() {
     this._clearContent();
-    this._renderCardsList();
+    this._renderFlightsList();
   }
 
   _remove(element) {

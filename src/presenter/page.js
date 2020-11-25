@@ -52,8 +52,11 @@ export default class PagePresenter {
 
   _renderFlightsList() {
     const flights = this._flightsModel;
+    this._fragment = new DocumentFragment();
+
     flights.forEach(this._renderFlightsItem);
 
+    render(this._flightsListView, this._fragment, RenderPosition.BEFORE_END);
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
   }
 
@@ -62,6 +65,8 @@ export default class PagePresenter {
     const cardView = new CardView(flight);
 
     render(flightsItemView, cardView, RenderPosition.BEFORE_END);
+
+    this._fragment.append(flightsItemView.getElement());
   }
 
   _renderMessage(title = ``, text = ``) {

@@ -8,12 +8,16 @@ const createCardTemplate = (flight) => {
   const airCompanyLogo = flight.airCompanyLogo;
   const airCompanyName = flight.airCompanyName;
 
+  const directDeparturePoint = flight.directFlight.departurePoint;
+  const directArrivalPoint = flight.directFlight.arrivalPoint;
   const directDepartureTime = getFormatDateToHHMM(flight.directFlight.departureTime);
   const directArrivalTime = getFormatDateToHHMM(flight.directFlight.arrivalTime);
   const directTransferPoints = flight.directFlight.transferPoints.join(`, `);
   const directTransferAmount = getTransferAmountLabel(flight.directFlight.transferPoints);
   const directFlightDuration = getFlightDurationLabel(flight.directFlight.departureTime, flight.directFlight.arrivalTime);
 
+  const returnDeparturePoint = flight.returnFlight.departurePoint;
+  const returnArrivalPoint = flight.returnFlight.arrivalPoint;
   const returnDepartureTime = getFormatDateToHHMM(flight.returnFlight.departureTime);
   const returnArrivalTime = getFormatDateToHHMM(flight.returnFlight.arrivalTime);
   const returnTransferPoints = flight.returnFlight.transferPoints.join(`, `);
@@ -28,7 +32,7 @@ const createCardTemplate = (flight) => {
       </div>
       <div class="card__row">
         <div class="card__description">
-          <p class="card__subtitle">${flight.directFlight.departurePoint}–${flight.directFlight.arrivalPoint}</p>
+          <p class="card__subtitle">${directDeparturePoint}–${directArrivalPoint}</p>
           <span class="card__text">${directDepartureTime} – ${directArrivalTime}</span>
         </div>
         <div class="card__description">
@@ -42,7 +46,7 @@ const createCardTemplate = (flight) => {
       </div>
       <div class="card__row">
         <div class="card__description">
-          <p class="card__subtitle">${flight.returnFlight.departurePoint}–${flight.returnFlight.arrivalPoint}</p>
+          <p class="card__subtitle">${returnDeparturePoint}–${returnArrivalPoint}</p>
           <span class="card__text">${returnDepartureTime} – ${returnArrivalTime}</span>
         </div>
         <div class="card__description">

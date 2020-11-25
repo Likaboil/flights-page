@@ -5,6 +5,9 @@ import {getFormatDateToHHMM, getFlightDurationLabel} from '../../utils/date';
 const createCardTemplate = (flight) => {
   const price = splitPrice(flight.price);
 
+  const airCompanyLogo = flight.airCompanyLogo;
+  const airCompanyName = flight.airCompanyName;
+
   const directDepartureTime = getFormatDateToHHMM(flight.directFlight.departureTime);
   const directArrivalTime = getFormatDateToHHMM(flight.directFlight.arrivalTime);
   const directTransferPoints = flight.directFlight.transferPoints.join(`, `);
@@ -21,7 +24,7 @@ const createCardTemplate = (flight) => {
     `<div>
       <div class="card__header">
         <p class="card__title">${price} p</p>
-        <img src="./img/${flight.airCompanyLogo}.png" alt="Логотип авиакомпании ${flight.airCompanyName}" class="card__logo" width="110" height="36">
+        <img src="./img/${airCompanyLogo}" alt="Логотип авиакомпании ${airCompanyName}" class="card__logo" width="110" height="36">
       </div>
       <div class="card__row">
         <div class="card__description">

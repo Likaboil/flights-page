@@ -43,7 +43,7 @@ export default class PagePresenter {
     render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
 
     if (this._isLoading) {
-      this._renderMessage(MESSAGE.LOADING.title, MESSAGE.LOADING.text);
+      this._renderMessage(MESSAGE.LOADING.TITLE, MESSAGE.LOADING.TEXT);
       return;
     }
 

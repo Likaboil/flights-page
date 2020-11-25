@@ -90,7 +90,7 @@ export default class PagePresenter {
     this._fragment.append(flightsItemView.getElement());
   }
 
-  _renderMessage(title = ``, text = ``) {
+  _renderMessage(title, text) {
     this._messageView = new MessageView(title, text);
     render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
   }

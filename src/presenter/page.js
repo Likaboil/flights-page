@@ -60,6 +60,8 @@ export default class PagePresenter {
 
     render(this._flightsListView, this._fragment, RenderPosition.BEFORE_END);
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
+
+    this._fragment = null;
   }
 
   _renderFlightsItem(flight) {

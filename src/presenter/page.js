@@ -17,6 +17,8 @@ export default class PagePresenter {
     this._tabsView = new TabsView();
     this._flightsView = new FlightsView();
     this._flightsListView = new FlightsListView();
+    this._renderFlightsItem = this._renderFlightsItem.bind(this);
+    this._renderFlightsList = this._renderFlightsList.bind(this);
   }
 
   init() {

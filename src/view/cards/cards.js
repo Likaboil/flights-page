@@ -1,16 +1,16 @@
 import {AbstractView} from '../index';
 
-const createCardTemplate = (item) => {
+const createCardTemplate = (flight) => {
   return (
     `<div>
       <div class="card__header">
-        <p class="card__title">${item.price} p</p>
-        <img src="./img/${item.airCompanyLogo}.png" alt="Логотип авиакомпании ${item.airCompanyName}" class="card__logo" width="110" height="36">
+        <p class="card__title">${flight.price} p</p>
+        <img src="./img/${flight.airCompanyLogo}.png" alt="Логотип авиакомпании ${flight.airCompanyName}" class="card__logo" width="110" height="36">
       </div>
       <div class="card__row">
         <div class="card__description">
-          <p class="card__subtitle">${item.directFlight.departurePoint}–${item.directFlight.arrivalPoint}</p>
-          <span class="card__text">${item.directFlight.depurtureTime} – ${item.directFlight.arrivalTime}</span>
+          <p class="card__subtitle">${flight.directFlight.departurePoint}–${flight.directFlight.arrivalPoint}</p>
+          <span class="card__text">${flight.directFlight.depurtureTime} – ${flight.directFlight.arrivalTime}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
@@ -18,13 +18,13 @@ const createCardTemplate = (item) => {
         </div>
         <div class="card__description">
           <p class="card__subtitle">2 пересадки</p>
-          <span class="card__text">${item.directFlight.transferPoint}</span>
+          <span class="card__text">${flight.directFlight.transferPoint}</span>
         </div>
       </div>
       <div class="card__row">
         <div class="card__description">
-          <p class="card__subtitle">${item.returnFlight.departurePoint}–${item.returnFlight.arrivalPoint}</p>
-          <span class="card__text">${item.returnFlight.depurtureTime} – ${item.returnFlight.arrivalTime}</span>
+          <p class="card__subtitle">${flight.returnFlight.departurePoint}–${flight.returnFlight.arrivalPoint}</p>
+          <span class="card__text">${flight.returnFlight.depurtureTime} – ${flight.returnFlight.arrivalTime}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
@@ -32,7 +32,7 @@ const createCardTemplate = (item) => {
         </div>
         <div class="card__description">
           <p class="card__subtitle">1 пересадка</p>
-          <span class="card__text">${item.returnFlight.transferPoint}</span>
+          <span class="card__text">${flight.returnFlight.transferPoint}</span>
         </div>
       </div>
     </div>`

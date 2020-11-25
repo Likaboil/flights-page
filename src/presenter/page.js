@@ -52,6 +52,8 @@ export default class PagePresenter {
 
   _renderFlightsList() {
     const flights = this._flightsModel;
+    flights.forEach(this._renderFlightsItem);
+
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
   }
 

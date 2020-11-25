@@ -17,3 +17,9 @@ const AIR_COMPANY = [
     LOGO: `s7logo.png`,
   }
 ];
+
+const moveDateConfig = {
+  minutes: 30,
+  hours: 8,
+  days: 2,
+};

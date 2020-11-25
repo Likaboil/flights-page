@@ -4,3 +4,6 @@ export const MESSAGE = {
     TEXT: `Пожалуйста, подождите..`,
   },
 };
+
+export const NO_TRANSFER_AMOUNT_LABEL = `Без пересадок`;
+export const ENDING_OF_TRANSFER_AMOUNT_LABEL = [`пересадка`, `пересадки`, `пересадок`];

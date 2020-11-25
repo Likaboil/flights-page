@@ -5,6 +5,12 @@ import {getFormatDateToHHMM, getFlightDurationLabel} from '../../utils/date';
 const createCardTemplate = (flight) => {
   const price = splitPrice(flight.price);
 
+  const directDepartureTime = getFormatDateToHHMM(flight.directFlight.departureTime);
+  const directArrivalTime = getFormatDateToHHMM(flight.directFlight.arrivalTime);
+
+  const returnDepartureTime = getFormatDateToHHMM(flight.returnFlight.departureTime);
+  const returnArrivalTime = getFormatDateToHHMM(flight.returnFlight.arrivalTime);
+
   return (
     `<div>
       <div class="card__header">
@@ -14,7 +20,7 @@ const createCardTemplate = (flight) => {
       <div class="card__row">
         <div class="card__description">
           <p class="card__subtitle">${flight.directFlight.departurePoint}–${flight.directFlight.arrivalPoint}</p>
-          <span class="card__text">${flight.directFlight.depurtureTime} – ${flight.directFlight.arrivalTime}</span>
+          <span class="card__text">${directDepartureTime} – ${directArrivalTime}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
@@ -28,7 +34,7 @@ const createCardTemplate = (flight) => {
       <div class="card__row">
         <div class="card__description">
           <p class="card__subtitle">${flight.returnFlight.departurePoint}–${flight.returnFlight.arrivalPoint}</p>
-          <span class="card__text">${flight.returnFlight.depurtureTime} – ${flight.returnFlight.arrivalTime}</span>
+          <span class="card__text">${returnDepartureTime} – ${returnArrivalTime}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>

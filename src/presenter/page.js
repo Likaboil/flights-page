@@ -50,9 +50,9 @@ export default class PagePresenter {
     this._renderCardsList();
   }
 
-  _renderCardsList() {
+  _renderFlightsList() {
+    const flights = this._flightsModel;
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
-    const models = this._fligthsModel;
   }
 
   _renderFlightsItem(flight) {

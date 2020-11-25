@@ -52,16 +52,14 @@ export default class PagePresenter {
 
   _renderCardsList() {
     render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
-
     const models = this._fligthsModel;
+  }
 
-    for (let model of models) {
-      const flightsItemView = new FlightsItemView();
-      const cardView = new CardView(model);
+  _renderFlightsItem(flight) {
+    const flightsItemView = new FlightsItemView();
+    const cardView = new CardView(flight);
 
-      render(this._flightsListView, flightsItemView, RenderPosition.BEFORE_END);
-      render(flightsItemView, cardView, RenderPosition.BEFORE_END);
-    }
+    render(flightsItemView, cardView, RenderPosition.BEFORE_END);
   }
 
   _renderMessage(title = ``, text = ``) {

@@ -41,6 +41,18 @@ export default class PagePresenter {
     this._renderContent();
   }
 
+  _clearPage() {
+    this._clearContent();
+    this._remove(this._tabsView);
+    this._remove(this._rightColumnView);
+    this._remove(this._filtersView);
+    this._remove(this._leftColumnView);
+    this._remove(this._logoView);
+    this._remove(this._headerView);
+    this._remove(this._pageView);
+    this._remove(this._containerView);
+  }
+
   _renderContent() {
     render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
 
@@ -50,6 +62,11 @@ export default class PagePresenter {
     }
 
     this._renderFlightsList();
+  }
+
+  _clearContent() {
+    this._remove(this._flightsListView);
+    this._remove(this._messageView);
   }
 
   _renderFlightsList() {
@@ -76,23 +93,6 @@ export default class PagePresenter {
   _renderMessage(title = ``, text = ``) {
     this._messageView = new MessageView(title, text);
     render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
-  }
-
-  _clearPage() {
-    this._clearContent();
-    this._remove(this._tabsView);
-    this._remove(this._rightColumnView);
-    this._remove(this._filtersView);
-    this._remove(this._leftColumnView);
-    this._remove(this._logoView);
-    this._remove(this._headerView);
-    this._remove(this._pageView);
-    this._remove(this._containerView);
-  }
-
-  _clearContent() {
-    this._remove(this._flightsListView);
-    this._remove(this._messageView);
   }
 
   _updateContent() {

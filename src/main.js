@@ -6,7 +6,7 @@ import {generateFlights} from './mocks/flights-generator';
 import {adaptFlightsToClient} from './adapter/flights';
 
 const rootElement = document.querySelector(`#root`);
-const FLIGHTS_MODEL = FLIGHTS;
+const FLIGHTS_MODEL = adaptFlightsToClient(generateFlights(5));
 
 const pagePresenter = new PagePresenter(rootElement, FLIGHTS_MODEL);
 pagePresenter.init();

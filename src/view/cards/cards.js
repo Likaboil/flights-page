@@ -9,14 +9,13 @@ const createCardTemplate = (flight) => {
   const directArrivalTime = getFormatDateToHHMM(flight.directFlight.arrivalTime);
   const directTransferPoints = flight.directFlight.transferPoints.join(`, `);
   const directTransferAmount = getTransferAmountLabel(flight.directFlight.transferPoints);
-
-
+  const directFlightDuration = getFlightDurationLabel(flight.directFlight.departureTime, flight.directFlight.arrivalTime);
 
   const returnDepartureTime = getFormatDateToHHMM(flight.returnFlight.departureTime);
   const returnArrivalTime = getFormatDateToHHMM(flight.returnFlight.arrivalTime);
   const returnTransferPoints = flight.returnFlight.transferPoints.join(`, `);
   const returnTransferAmount = getTransferAmountLabel(flight.returnFlight.transferPoints);
-
+  const returnFlightDuration = getFlightDurationLabel(flight.returnFlight.departureTime, flight.returnFlight.arrivalTime);
 
   return (
     `<div>
@@ -31,7 +30,7 @@ const createCardTemplate = (flight) => {
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
-          <span class="card__text card__text--length">21ч 15м</span>
+          <span class="card__text card__text--length">${directFlightDuration}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">${directTransferAmount}</p>
@@ -45,7 +44,7 @@ const createCardTemplate = (flight) => {
         </div>
         <div class="card__description">
           <p class="card__subtitle">В пути</p>
-          <span class="card__text card__text--length">13ч 30м</span>
+          <span class="card__text card__text--length">${returnFlightDuration}</span>
         </div>
         <div class="card__description">
           <p class="card__subtitle">${returnTransferAmount}</p>

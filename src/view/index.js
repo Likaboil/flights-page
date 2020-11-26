@@ -8,6 +8,7 @@ export {default as LogoView} from './logo/logo';
 export {default as CardView} from './cards/cards';
 export {default as FiltersView} from './filters/filters';
 export {default as FlightsView} from './flights/flights';
-export {default as FlightsListView, FlightsItemView} from './flights/flights-list';
+export {default as FlightsListView} from './flights/components/flights-list';
+export {default as FlightsListItemView} from './flights/components/flights-list-item';
 export {default as TabsView} from './tabs/tabs';
 export {default as MessageView} from './message/message';

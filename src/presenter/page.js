@@ -1,4 +1,4 @@
-import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsItemView, CardView} from '../view/index';
+import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsListItemView, CardView} from '../view/index';
 import {clearElement, render, RenderPosition} from '../utils/dom';
 import {MESSAGE} from "../const";
 
@@ -82,12 +82,12 @@ export default class PagePresenter {
   }
 
   _renderFlightsItem(flight) {
-    const flightsItemView = new FlightsItemView();
+    const flightsListItemView = new FlightsListItemView();
     const cardView = new CardView(flight);
 
-    render(flightsItemView, cardView, RenderPosition.BEFORE_END);
+    render(flightsListItemView, cardView, RenderPosition.BEFORE_END);
 
-    this._fragment.append(flightsItemView.getElement());
+    this._fragment.append(flightsListItemView.getElement());
   }
 
   _renderMessage(title, text) {

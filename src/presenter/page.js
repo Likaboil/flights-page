@@ -1,4 +1,4 @@
-import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsListItemView, CardView} from '../view/index';
+import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsContainerView, FlightsListItemView, CardView} from '../view/index';
 import {clearElement, render, RenderPosition} from '../utils/dom';
 import {MESSAGE} from "../const";
 
@@ -15,7 +15,7 @@ export default class PagePresenter {
     this._logoView = new LogoView();
     this._filtersView = new FiltersView();
     this._tabsView = new TabsView();
-    this._flightsView = new FlightsView();
+    this._flightsContainerView = new FlightsContainerView();
     this._flightsListView = new FlightsListView();
     this._renderFlightsItem = this._renderFlightsItem.bind(this);
     this._renderFlightsList = this._renderFlightsList.bind(this);
@@ -54,7 +54,7 @@ export default class PagePresenter {
   }
 
   _renderContent() {
-    render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
+    render(this._rightColumnView, this._flightsContainerView, RenderPosition.BEFORE_END);
 
     if (this._isLoading) {
       this._renderMessage(MESSAGE.LOADING.TITLE, MESSAGE.LOADING.TEXT);
@@ -76,7 +76,7 @@ export default class PagePresenter {
     flights.forEach(this._renderFlightsItem);
 
     render(this._flightsListView, this._fragment, RenderPosition.BEFORE_END);
-    render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
+    render(this._flightsContainerView, this._flightsListView, RenderPosition.BEFORE_END);
 
     this._fragment = null;
   }

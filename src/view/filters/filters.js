@@ -6,7 +6,7 @@ const createFiltersTemplate = (filters) => {
       <h2 class="visually-hidden">Фильтрация по количеству пересадок</h2>
       <form action="get" class="filters__form">
         <fieldset class="filters__list">
-          <legend class="filters__title">Количество пересадок</legend>
+          <legend class="filters__title">${filters.title}</legend>
           <div class="filters__wrapper">
             <input class="filters__input" type="checkbox" value="" id="check1" checked>
             <label class="filters__label" for="check1"> Все</label>

@@ -1,6 +1,6 @@
 import {AbstractView} from '../index';
 
-const createFiltersTemplate = () => {
+const createFiltersTemplate = (filters) => {
   return (
     `<aside class="filters">
       <h2 class="visually-hidden">Фильтрация по количеству пересадок</h2>

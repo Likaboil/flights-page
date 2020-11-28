@@ -1,6 +1,6 @@
 import {AbstractView} from '../index';
 
-const createTabsTemplate = () => {
+const createTabsTemplate = (sortingFilters) => {
   return (
     `<div>
       <h2 class="visually-hidden">Фильтрация по скорости перелета</h2>

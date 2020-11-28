@@ -17,6 +17,10 @@ const createTabsTemplate = () => {
 };
 
 export default class TabsView extends AbstractView {
+  constructor(sortingFilters) {
+    super();
+    this._sortingFilters = sortingFilters;
+  }
 
   getTemplate() {
     return createTabsTemplate();

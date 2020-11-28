@@ -3,7 +3,7 @@ import {AbstractView} from '../index';
 const createFiltersTemplate = (filters) => {
   return (
     `<aside class="filters">
-      <h2 class="visually-hidden">Фильтрация по количеству пересадок</h2>
+      <h2 class="visually-hidden">${filters.headerTitle}</h2>
       <form action="get" class="filters__form">
         <fieldset class="filters__list">
           <legend class="filters__title">${filters.title}</legend>

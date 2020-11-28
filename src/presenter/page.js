@@ -1,5 +1,25 @@
-import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsContainerView, FlightsListItemView, CardView} from '../view/index';
-import {clearElement, render, RenderPosition} from '../utils/dom';
+import {
+  ContainerView,
+  PageView,
+  HeaderView,
+  LogoView,
+  LeftColumnView,
+  RightColumnView,
+  FiltersView,
+  TabsView,
+  MessageView,
+  FlightsContainerView,
+  FlightsListView,
+  FlightsListItemView,
+  CardView
+} from '../view/';
+
+import {
+  clearElement,
+  render,
+  RenderPosition
+} from '../utils/dom';
+
 import {MESSAGE} from "../const";
 
 export default class PagePresenter {

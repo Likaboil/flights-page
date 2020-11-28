@@ -32,3 +32,17 @@ export const FILTERS = {
     }
   ],
 };
+
+export const SORTING_FILTERS = {
+  headerTitle: `Сортировка`,
+  items: [
+    {
+      type: `cheaper`,
+      value: `Самый дешевый`,
+    },
+    {
+      type: `faster`,
+      value: `Самый быстрый`
+    }
+  ],
+};

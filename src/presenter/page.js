@@ -23,10 +23,11 @@ import {
 import {MESSAGE} from "../const";
 
 export default class PagePresenter {
-  constructor(container, flightsModel, filtersModel) {
+  constructor(container, flightsModel, filtersModel, sortModel) {
     this._container = container;
     this._flightsModel = flightsModel;
     this._filtersModel = filtersModel;
+    this._sortModel = sortModel;
     this._isLoading = false;
     this._pageView = new PageView();
     this._headerView = new HeaderView();
@@ -35,7 +36,7 @@ export default class PagePresenter {
     this._containerView = new ContainerView();
     this._logoView = new LogoView();
     this._filtersView = new FiltersView(this._filtersModel);
-    this._tabsView = new TabsView();
+    this._tabsView = new TabsView(this._sortModel);
     this._flightsContainerView = new FlightsContainerView();
     this._flightsListView = new FlightsListView();
     this._renderFlightsItem = this._renderFlightsItem.bind(this);

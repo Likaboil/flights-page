@@ -25,7 +25,7 @@ import {MESSAGE} from "../const";
 export default class PagePresenter {
   constructor(container, flightsModel, filtersModel, sortModel) {
     this._container = container;
-    this._flightsModel = flightsModel;
+    this._flightsModel = flightsModel.get();
     this._filtersModel = filtersModel;
     this._sortModel = sortModel;
     this._isLoading = false;

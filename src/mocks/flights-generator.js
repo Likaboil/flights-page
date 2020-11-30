@@ -27,11 +27,12 @@ const moveDateConfig = {
 
 const generateFlight = () => {
   const DirectDateStart = new Date();
-  const DirectDateEnd = getRandomDate({DirectDateStart, moveDateConfig});
+  const DirectDateEnd = getRandomDate({date: DirectDateStart, ...moveDateConfig});
 
   const ReturnDateStart = new Date(DirectDateStart);
   ReturnDateStart.setDate(ReturnDateStart.getDate() + 7);
-  const ReturnDateEnd = getRandomDate({ReturnDateStart, moveDateConfig});
+
+  const ReturnDateEnd = getRandomDate({date: ReturnDateStart, ...moveDateConfig});
 
   return {
     id: nanoid(),

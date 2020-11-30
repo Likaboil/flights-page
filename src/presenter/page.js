@@ -1,11 +1,33 @@
-import {PageView, HeaderView, LeftColumnView, RightColumnView, ContainerView, LogoView, FiltersView, TabsView, MessageView, FlightsListView, FlightsView, FlightsItemView, CardView} from '../view/index';
-import {clearElement, render, RenderPosition} from '../utils/dom';
+import {
+  ContainerView,
+  PageView,
+  HeaderView,
+  LogoView,
+  LeftColumnView,
+  RightColumnView,
+  FiltersView,
+  TabsView,
+  MessageView,
+  FlightsContainerView,
+  FlightsListView,
+  FlightsListItemView,
+  CardView
+} from '../view/';
+
+import {
+  clearElement,
+  render,
+  RenderPosition
+} from '../utils/dom';
+
 import {MESSAGE} from "../const";
 
 export default class PagePresenter {
-  constructor(container, flightsModel) {
+  constructor(container, flightsModel, filtersModel, sortModel) {
     this._container = container;
     this._flightsModel = flightsModel;
+    this._filtersModel = filtersModel;
+    this._sortModel = sortModel;
     this._isLoading = false;
     this._pageView = new PageView();
     this._headerView = new HeaderView();
@@ -13,9 +35,9 @@ export default class PagePresenter {
     this._rightColumnView = new RightColumnView();
     this._containerView = new ContainerView();
     this._logoView = new LogoView();
-    this._filtersView = new FiltersView();
-    this._tabsView = new TabsView();
-    this._flightsView = new FlightsView();
+    this._filtersView = new FiltersView(this._filtersModel);
+    this._tabsView = new TabsView(this._sortModel);
+    this._flightsContainerView = new FlightsContainerView();
     this._flightsListView = new FlightsListView();
     this._renderFlightsItem = this._renderFlightsItem.bind(this);
     this._renderFlightsList = this._renderFlightsList.bind(this);
@@ -54,7 +76,7 @@ export default class PagePresenter {
   }
 
   _renderContent() {
-    render(this._rightColumnView, this._flightsView, RenderPosition.BEFORE_END);
+    render(this._rightColumnView, this._flightsContainerView, RenderPosition.BEFORE_END);
 
     if (this._isLoading) {
       this._renderMessage(MESSAGE.LOADING.TITLE, MESSAGE.LOADING.TEXT);
@@ -76,18 +98,18 @@ export default class PagePresenter {
     flights.forEach(this._renderFlightsItem);
 
     render(this._flightsListView, this._fragment, RenderPosition.BEFORE_END);
-    render(this._flightsView, this._flightsListView, RenderPosition.BEFORE_END);
+    render(this._flightsContainerView, this._flightsListView, RenderPosition.BEFORE_END);
 
     this._fragment = null;
   }
 
   _renderFlightsItem(flight) {
-    const flightsItemView = new FlightsItemView();
+    const flightsListItemView = new FlightsListItemView();
     const cardView = new CardView(flight);
 
-    render(flightsItemView, cardView, RenderPosition.BEFORE_END);
+    render(flightsListItemView, cardView, RenderPosition.BEFORE_END);
 
-    this._fragment.append(flightsItemView.getElement());
+    this._fragment.append(flightsListItemView.getElement());
   }
 
   _renderMessage(title, text) {

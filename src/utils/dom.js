@@ -1,4 +1,4 @@
-import {AbstractView} from '../view/index';
+import {AbstractView} from '../views/index';
 
 export const RenderPosition = {
   BEFORE_BEGIN: `BEFORE_BEGIN`,

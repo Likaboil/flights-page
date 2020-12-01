@@ -5,7 +5,7 @@ export {default as LeftColumnView} from './page/components/left-column';
 export {default as RightColumnView} from './page/components/right-column';
 export {default as ContainerView} from './container/container';
 export {default as LogoView} from './logo/logo';
-export {default as CardView} from './cards/cards';
+export {default as CardView} from './cards-flights/cards';
 export {default as FiltersView} from './filters/filters';
 export {default as FlightsContainerView} from './flights/flights-container';
 export {default as FlightsListView} from './flights/components/flights-list';

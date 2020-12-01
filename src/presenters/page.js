@@ -12,7 +12,7 @@ import {
   FlightsListView,
   FlightsListItemView,
   CardView
-} from '../view/';
+} from '../views/';
 
 import {
   clearElement,

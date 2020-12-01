@@ -1,7 +1,7 @@
 import 'normalize.css';
 import './style.scss';
 
-import {default as PagePresenter} from './presenter/page.js';
+import {default as PagePresenter} from './presenters/page.js';
 import {generateFlights} from './mocks/flights-generator';
 import {adaptFlightsToClient} from './adapter/flights';
 import {FILTERS, SORTING_FILTERS} from './const';

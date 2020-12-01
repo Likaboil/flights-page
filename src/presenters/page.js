@@ -11,7 +11,7 @@ import {
   FlightsContainerView,
   FlightsListView,
   FlightsListItemView,
-  CardView
+  CardFlightView
 } from '../views/';
 
 import {
@@ -105,7 +105,7 @@ export default class PagePresenter {
 
   _renderFlightsItem(flight) {
     const flightsListItemView = new FlightsListItemView();
-    const cardView = new CardView(flight);
+    const cardView = new CardFlightView(flight);
 
     render(flightsListItemView, cardView, RenderPosition.BEFORE_END);
 

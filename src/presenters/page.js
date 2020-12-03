@@ -28,7 +28,7 @@ import {
 export default class PagePresenter {
   constructor(container, flightsModel, filtersModel, sortModel) {
     this._container = container;
-    this._flightsModel = flightsModel.get();
+    this._flightsModel = flightsModel;
     this._filtersModel = filtersModel;
     this._sortModel = sortModel;
     this._isLoading = true;
@@ -98,7 +98,7 @@ export default class PagePresenter {
   }
 
   _renderFlightsList() {
-    const flights = this._flightsModel;
+    const flights = this._flightsModel.get();
     this._fragment = new DocumentFragment();
 
     flights.forEach(this._renderFlightsItem);

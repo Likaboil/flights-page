@@ -133,7 +133,7 @@ export default class PagePresenter {
     }
   }
 
-  __handleModelEvent(updateType) {
+  _handleModelEvent(updateType) {
     switch (updateType) {
       case UpdateType.INIT:
         this._isLoading = false;

@@ -11,5 +11,10 @@ const FILTERS_MODEL = FILTERS;
 const SORT_MODEL = SORTING_FILTERS;
 const flightsModel = new FlightsModel();
 
+Api.getFlights()
+  .then((flights) => {
+    flightsModel.set(UpdateType.INIT, flights);
+  });
+
 const pagePresenter = new PagePresenter(rootElement, flightsModel, FILTERS_MODEL, SORT_MODEL);
 pagePresenter.init();

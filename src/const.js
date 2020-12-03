@@ -3,6 +3,10 @@ export const MESSAGE = {
     TITLE: `Данные обрабатываются..`,
     TEXT: `Пожалуйста, подождите..`,
   },
+  ERROR: {
+    TITLE: `Произошла ошибка`,
+    TEXT: `Рейсы не найдены`,
+  }
 };
 
 export const NO_TRANSFER_AMOUNT_LABEL = `Без пересадок`;

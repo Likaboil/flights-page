@@ -53,6 +53,7 @@ export default class PagePresenter {
   }
 
   destroy() {
+    this._flightsModel.remove(this._handleModelEvent);
     this._clearPage();
   }
 

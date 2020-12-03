@@ -4,7 +4,7 @@ import './style.scss';
 import {default as PagePresenter} from './presenters/page.js';
 import {generateFlights} from './mocks/flights-generator';
 import {adaptFlightsToClient} from './adapter/flights';
-import {FILTERS, SORTING_FILTERS} from './const';
+import {FILTERS, SORTING_FILTERS, UpdateType} from './const';
 import {default as FlightsModel} from './models/flights';
 import {default as Api} from './api/api';
 

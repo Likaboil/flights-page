@@ -50,3 +50,11 @@ export const SORTING_FILTERS = {
     }
   ],
 };
+
+
+export const UpdateType = {
+  INIT: `INIT`,
+  ERROR: `ERROR`,
+  MAJOR: `MAJOR`,
+  MINOR: `MINOR`,
+};

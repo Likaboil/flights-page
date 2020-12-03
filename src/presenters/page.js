@@ -31,7 +31,7 @@ export default class PagePresenter {
     this._flightsModel = flightsModel.get();
     this._filtersModel = filtersModel;
     this._sortModel = sortModel;
-    this._isLoading = false;
+    this._isLoading = true;
     this._pageView = new PageView();
     this._headerView = new HeaderView();
     this._leftColumnView = new LeftColumnView();

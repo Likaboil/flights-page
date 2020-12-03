@@ -6,8 +6,9 @@ export default class FlightsModel extends Observer {
     this._flights = null;
   }
 
-  set(flights) {
+  set(updateType, flights) {
     this._flights = flights;
+    this._notify(updateType);
   }
 
   get() {

@@ -20,7 +20,10 @@ import {
   RenderPosition
 } from '../utils/dom';
 
-import {MESSAGE} from "../const";
+import {
+  MESSAGE,
+  UpdateType,
+} from "../const";
 
 export default class PagePresenter {
   constructor(container, flightsModel, filtersModel, sortModel) {

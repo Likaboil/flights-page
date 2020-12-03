@@ -17,7 +17,7 @@ const createFiltersTemplate = (filters) => {
         </div>`
       );
     }).join(``)
-    };
+    }
         </fieldset>
       </form>
     </aside>`

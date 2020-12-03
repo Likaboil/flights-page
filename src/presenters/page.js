@@ -142,7 +142,7 @@ export default class PagePresenter {
         break;
       case UpdateType.ERROR:
         this._clearContent();
-        this._renderMessage();
+        this._renderMessage(MESSAGE.ERROR.TITLE, MESSAGE.ERROR.TEXT);
         break;
       case UpdateType.MINOR:
         this._updateContent();

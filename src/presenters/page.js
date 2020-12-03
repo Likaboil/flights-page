@@ -131,4 +131,21 @@ export default class PagePresenter {
       element = null;
     }
   }
+
+  __handleModelEvent(updateType) {
+    switch (updateType) {
+      case UpdateType.INIT:
+        this._isLoading = false;
+        this._clearPage();
+        this._renderPage();
+        break;
+      case UpdateType.ERROR:
+        this._clearContent();
+        this._renderMessage();
+        break;
+      case UpdateType.MINOR:
+        this._updateContent();
+        break;
+    }
+  }
 }

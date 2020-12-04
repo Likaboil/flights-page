@@ -11,6 +11,10 @@ export default class FlightsModel extends Observer {
     this._notify(updateType);
   }
 
+  setError(updateType) {
+    this._notify(updateType);
+  }
+
   get() {
     return this._flights;
   }

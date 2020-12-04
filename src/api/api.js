@@ -13,8 +13,7 @@ export default class Api {
 
     return delay(DELAY_MS)
       .then(() => {
-        throw new Error();
-        return adaptFlightsToClient(mockFlights)
+        return adaptFlightsToClient(mockFlights);
       });
   }
 }

@@ -9,6 +9,11 @@ export const MESSAGE = {
   }
 };
 
+export const ServerErrorMessage = {
+  TITLE: `Ошибка загрузки данных.`,
+  TEXT: `Пожалуйста, перезагрузите страницу`,
+};
+
 export const NO_TRANSFER_AMOUNT_LABEL = `Без пересадок`;
 export const ENDING_OF_TRANSFER_AMOUNT_LABEL = [`пересадка`, `пересадки`, `пересадок`];
 

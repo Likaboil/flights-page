@@ -21,9 +21,9 @@ import {
 } from '../utils/dom';
 
 import {
-  MESSAGE,
+  LoadingMessage,
   UpdateType,
-  ServerErrorMessage
+  ServerErrorMessage,
 } from "../const";
 
 export default class PagePresenter {
@@ -86,7 +86,7 @@ export default class PagePresenter {
     render(this._rightColumnView, this._flightsContainerView, RenderPosition.BEFORE_END);
 
     if (this._isLoading) {
-      this._renderMessage(MESSAGE.LOADING.TITLE, MESSAGE.LOADING.TEXT);
+      this._renderMessage(LoadingMessage.TITLE, LoadingMessage.TEXT);
       return;
     }
 

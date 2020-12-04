@@ -1,12 +1,11 @@
-export const MESSAGE = {
-  LOADING: {
-    TITLE: `Данные обрабатываются..`,
-    TEXT: `Пожалуйста, подождите..`,
-  },
-  ERROR: {
-    TITLE: `Произошла ошибка`,
-    TEXT: `Рейсы не найдены`,
-  }
+export const LoadingMessage = {
+  TITLE: `Данные обрабатываются..`,
+  TEXT: `Пожалуйста, подождите..`,
+};
+
+export const ErrorMessage = {
+  TITLE: `Произошла ошибка`,
+  TEXT: `Рейсы не найдены`,
 };
 
 export const ServerErrorMessage = {

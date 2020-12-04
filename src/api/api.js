@@ -10,6 +10,11 @@ export const mockFlights = generateFlights(FLIGHT_AMOUNT);
 export default class Api {
 
   static getFlights() {
-    return delay(DELAY_MS).then(() => adaptFlightsToClient(mockFlights));
+
+    return delay(DELAY_MS)
+      .then(() => {
+        throw new Error();
+        return adaptFlightsToClient(mockFlights)
+      });
   }
 }

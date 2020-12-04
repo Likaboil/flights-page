@@ -23,6 +23,7 @@ import {
 import {
   MESSAGE,
   UpdateType,
+  ServerErrorMessage
 } from "../const";
 
 export default class PagePresenter {
@@ -144,7 +145,7 @@ export default class PagePresenter {
         break;
       case UpdateType.ERROR:
         this._clearContent();
-        this._renderMessage(MESSAGE.ERROR.TITLE, MESSAGE.ERROR.TEXT);
+        this._renderMessage(ServerErrorMessage.title, ServerErrorMessage.text);
         break;
       case UpdateType.MINOR:
         this._updateContent();

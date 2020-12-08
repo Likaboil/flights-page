@@ -21,9 +21,10 @@ const createTabsTemplate = (sortingFilters) => {
 };
 
 export default class TabsView extends AbstractView {
-  constructor(sortingFilters) {
+  constructor(sortingFilters, sortType) {
     super();
     this._sortingFilters = sortingFilters;
+    this._sortType = sortType;
   }
 
   getTemplate() {

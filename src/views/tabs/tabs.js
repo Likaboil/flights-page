@@ -28,6 +28,6 @@ export default class TabsView extends AbstractView {
   }
 
   getTemplate() {
-    return createTabsTemplate(this._sortingFilters);
+    return createTabsTemplate(this._sortingFilters, this._sortType);
   }
 }

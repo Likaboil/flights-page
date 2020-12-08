@@ -46,6 +46,7 @@ export default class PagePresenter {
     this._renderFlightsItem = this._renderFlightsItem.bind(this);
     this._renderFlightsList = this._renderFlightsList.bind(this);
     this._handleModelEvent = this._handleModelEvent.bind(this);
+    this._sortChangeHandler = this._sortChangeHandler.bind(this);
     this._currentSortType = SortType.SPEED;
   }
 

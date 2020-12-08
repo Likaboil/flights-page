@@ -1,6 +1,6 @@
 import {AbstractView} from '../index';
 
-const createTabsTemplate = (sortingFilters) => {
+const createTabsTemplate = (sortingFilters, defaultSortType) => {
   return (
     `<div>
       <h2 class="visually-hidden">${sortingFilters.headerTitle}</h2>
@@ -9,8 +9,10 @@ const createTabsTemplate = (sortingFilters) => {
       const type = filter.type;
       const value = filter.value;
       return (
-        `<li class="tabs__item tabs__item--${type}">
-          <a class="tabs__text">${value}</a>
+        `<li class="tabs__item tabs__item--${type}
+        ${type === defaultSortType ? `tabs__item--active` : `` }">
+          <a class="tabs__text
+        ${type === defaultSortType ? `tabs__text--active` : ``}">${value}</a>
         </li>`
       );
     }).join(``)

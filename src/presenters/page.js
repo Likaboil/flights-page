@@ -125,9 +125,20 @@ export default class PagePresenter {
     render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
   }
 
+  _sortChangeHandler(sortType) {
+    if (this._currentSortType === sortType) {
+      return;
+    }
+    this._currentSortType = sortType;
+    this._clearContent();
+    this._clearSort();
+    this._renderPage();
+  }
+
   _renderSort() {
     this._tabsView = new TabsView(this._sortModel, this._currentSortType);
     render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
+    this._tabsView.setChangeHandler(this._sortChangeHandler);
   }
 
   _clearSort() {

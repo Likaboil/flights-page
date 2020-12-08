@@ -130,6 +130,13 @@ export default class PagePresenter {
     render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
   }
 
+  _clearSort() {
+    if (this._tabsView !== null) {
+      clearElement(this._tabsView);
+      this._tabsView = null;
+    }
+  }
+
   _updateContent() {
     this._clearContent();
     this._renderFlightsList();

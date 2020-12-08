@@ -27,6 +27,7 @@ export default class TabsView extends AbstractView {
     super();
     this._sortingFilters = sortingFilters;
     this._sortType = sortType;
+    this._sortChangeHandler = this._sortChangeHandler.bind(this);
   }
 
   getTemplate() {
@@ -36,5 +37,10 @@ export default class TabsView extends AbstractView {
   setChangeHandler(callback) {
     this._callback.sortChangeHandler = callback;
     this.getElement().addEventListener(`click`, this._sortChangeHandler);
+  }
+
+  _sortChangeHandler(evt) {
+    evt.preventDefault();
+    this._callback.sortChangeHandler();
   }
 }

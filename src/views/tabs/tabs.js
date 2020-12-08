@@ -32,4 +32,9 @@ export default class TabsView extends AbstractView {
   getTemplate() {
     return createTabsTemplate(this._sortingFilters, this._sortType);
   }
+
+  setChangeHandler(callback) {
+    this._callback.sortChangeHandler = callback;
+    this.getElement().addEventListener(`click`, this._sortChangeHandler);
+  }
 }

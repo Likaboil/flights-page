@@ -10,9 +10,11 @@ const createTabsTemplate = (sortingFilters, defaultSortType) => {
       const value = filter.value;
       return (
         `<li class="tabs__item tabs__item--${type}
-        ${type === defaultSortType ? `tabs__item--active` : `` }">
+        ${type === defaultSortType ? `tabs__item--active` : `` }"
+        type="${type}">
           <a class="tabs__text
-        ${type === defaultSortType ? `tabs__text--active` : ``}">${value}</a>
+        ${type === defaultSortType ? `tabs__text--active` : ``}"
+        type="${type}" >${value}</a>
         </li>`
       );
     }).join(``)

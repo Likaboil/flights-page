@@ -73,7 +73,7 @@ export default class PagePresenter {
 
   _clearPage() {
     this._clearContent();
-    this._remove(this._tabsView);
+    this._clearSort();
     this._remove(this._rightColumnView);
     this._remove(this._filtersView);
     this._remove(this._leftColumnView);

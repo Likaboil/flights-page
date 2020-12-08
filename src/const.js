@@ -55,6 +55,10 @@ export const SORTING_FILTERS = {
   ],
 };
 
+export const SortType = {
+  PRICE: `cheaper`,
+  SPEED: `faster`,
+};
 
 export const UpdateType = {
   INIT: `INIT`,

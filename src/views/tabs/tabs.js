@@ -1,5 +1,8 @@
 import {AbstractView} from '../index';
 
+const ACTIVE_TAB_ITEM_CLASS = `tabs__item--active`;
+const ACTIVE_TAB_TEXT_CLASS = `tabs__text--active`;
+
 const createTabsTemplate = (sortingFilters, defaultSortType) => {
   return (
     `<div>
@@ -10,10 +13,10 @@ const createTabsTemplate = (sortingFilters, defaultSortType) => {
       const value = filter.value;
       return (
         `<li class="tabs__item tabs__item--${type}
-        ${type === defaultSortType ? `tabs__item--active` : `` }"
+        ${type === defaultSortType ? ACTIVE_TAB_ITEM_CLASS : `` }"
         type="${type}">
           <a href='#' class="tabs__text
-        ${type === defaultSortType ? `tabs__text--active` : ``}"
+        ${type === defaultSortType ? ACTIVE_TAB_TEXT_CLASS : ``}"
         type="${type}" >${value}</a>
         </li>`
       );

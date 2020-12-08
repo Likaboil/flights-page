@@ -24,6 +24,7 @@ import {
   LoadingMessage,
   UpdateType,
   ServerErrorMessage,
+  SortType,
 } from "../const";
 
 export default class PagePresenter {

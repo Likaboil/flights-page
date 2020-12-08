@@ -43,6 +43,6 @@ export default class TabsView extends AbstractView {
 
   _sortChangeHandler(evt) {
     evt.preventDefault();
-    this._callback.sortChangeHandler();
+    this._callback.sortChangeHandler(evt.target.type);
   }
 }

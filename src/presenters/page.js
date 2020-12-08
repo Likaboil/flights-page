@@ -67,6 +67,7 @@ export default class PagePresenter {
     render(this._pageView, this._leftColumnView, RenderPosition.BEFORE_END);
     render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);
     render(this._pageView, this._rightColumnView, RenderPosition.BEFORE_END);
+    this._renderSort();
     this._renderContent();
   }
 
@@ -122,6 +123,11 @@ export default class PagePresenter {
   _renderMessage(title, text) {
     this._messageView = new MessageView(title, text);
     render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
+  }
+
+  _renderSort() {
+    this._tabsView = new TabsView(this._sortModel, this._currentSortType);
+    render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
   }
 
   _updateContent() {

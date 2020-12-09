@@ -21,6 +21,11 @@ import {
 } from '../utils/dom';
 
 import {
+  sortFlightsDuration,
+  sortFlightsPrice,
+} from '../utils/sort';
+
+import {
   LoadingMessage,
   UpdateType,
   ServerErrorMessage,

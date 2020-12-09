@@ -153,7 +153,7 @@ export default class PagePresenter {
 
   _renderSort() {
     this._tabsView = new TabsView(this._sortModel, this._currentSortType);
-    render(this._rightColumnView, this._tabsView, RenderPosition.BEFORE_END);
+    render(this._rightColumnView, this._tabsView, RenderPosition.AFTER_BEGIN);
     this._tabsView.setChangeHandler(this._sortChangeHandler);
   }
 

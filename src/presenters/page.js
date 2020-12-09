@@ -146,9 +146,9 @@ export default class PagePresenter {
       return;
     }
     this._currentSortType = sortType;
-    this._clearContent();
     this._clearSort();
-    this._renderPage();
+    this._renderSort();
+    this._updateContent();
   }
 
   _renderSort() {

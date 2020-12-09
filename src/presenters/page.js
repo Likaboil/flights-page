@@ -104,7 +104,7 @@ export default class PagePresenter {
   }
 
   _renderFlightsList() {
-    const flights = this._flightsModel.get();
+    const flights = this._sortFlights();
     this._fragment = new DocumentFragment();
 
     flights.forEach(this._renderFlightsItem);

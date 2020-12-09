@@ -47,7 +47,6 @@ export default class PagePresenter {
     this._logoView = new LogoView();
     this._filtersView = new FiltersView(this._filtersModel);
     this._flightsContainerView = new FlightsContainerView();
-    this._flightsListView = new FlightsListView();
     this._renderFlightsItem = this._renderFlightsItem.bind(this);
     this._renderFlightsList = this._renderFlightsList.bind(this);
     this._handleModelEvent = this._handleModelEvent.bind(this);
@@ -106,6 +105,7 @@ export default class PagePresenter {
   _renderFlightsList() {
     const flights = this._sortFlights();
     this._fragment = new DocumentFragment();
+    this._flightsListView = new FlightsListView();
 
     flights.forEach(this._renderFlightsItem);
 

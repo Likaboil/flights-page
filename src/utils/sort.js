@@ -6,3 +6,5 @@ export const sortFlightsDuration = (flight1, flight2) => {
 
   return (directFlightDuration1 - directFlightDuration2);
 };
+
+export const sortFlightsPrice = (flight1, flight2) => flight1.price - flight2.price;

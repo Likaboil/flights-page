@@ -129,6 +129,18 @@ export default class PagePresenter {
     render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
   }
 
+  _sortFlights() {
+    const flights = this._flightsModel.get();
+    switch (this._currentSortType) {
+      case SortType.SPEED:
+        return flights.sort(sortFlightsDuration);
+      case SortType.PRICE:
+        return flights.sort(sortFlightsPrice);
+      default:
+        return flights;
+    }
+  }
+
   _sortChangeHandler(sortType) {
     if (this._currentSortType === sortType) {
       return;

@@ -86,12 +86,10 @@ export default class PagePresenter {
 
   _renderContent() {
     render(this._rightColumnView, this._flightsContainerView, RenderPosition.BEFORE_END);
-
     if (this._isLoading) {
       this._renderMessage(LoadingMessage.TITLE, LoadingMessage.TEXT);
       return;
     }
-
     this._renderFlightsList();
   }
 
@@ -134,6 +132,7 @@ export default class PagePresenter {
     this._clearContent();
     this._clearSort();
     this._renderPage();
+
   }
 
   _renderSort() {
@@ -170,7 +169,7 @@ export default class PagePresenter {
         break;
       case UpdateType.ERROR:
         this._clearContent();
-        this._renderMessage(ServerErrorMessage.title, ServerErrorMessage.text);
+        this._renderMessage(ServerErrorMessage.TITLE, ServerErrorMessage.TEXT);
         break;
       case UpdateType.MINOR:
         this._updateContent();

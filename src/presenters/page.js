@@ -149,7 +149,6 @@ export default class PagePresenter {
     this._clearContent();
     this._clearSort();
     this._renderPage();
-
   }
 
   _renderSort() {
@@ -159,10 +158,7 @@ export default class PagePresenter {
   }
 
   _clearSort() {
-    if (this._tabsView !== null) {
-      clearElement(this._tabsView);
-      this._tabsView = null;
-    }
+    this._remove(this._tabsView);
   }
 
   _updateContent() {

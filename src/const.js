@@ -41,7 +41,7 @@ export const FILTERS = {
   ],
 };
 
-export const SORTING_FILTERS = {
+export const SortFilter = {
   headerTitle: `Сортировка`,
   items: [
     {

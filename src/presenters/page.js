@@ -34,11 +34,11 @@ import {
 } from "../const";
 
 export default class PagePresenter {
-  constructor(container, flightsModel, filtersModel, sortModel) {
+  constructor(container, flightsModel, filtersModel) {
     this._container = container;
     this._flightsModel = flightsModel;
     this._filtersModel = filtersModel;
-    this._sortModel = sortModel;
+    this._sortModel = SortFilter;
     this._isLoading = true;
     this._pageView = new PageView();
     this._headerView = new HeaderView();

@@ -5,12 +5,12 @@ const ActiveTabClass = {
   TEXT: `tabs__text--active`,
 };
 
-const createTabsTemplate = (sortingFilters, defaultSortType) => {
+const createTabsTemplate = (sortFilters, defaultSortType) => {
   return (
     `<div>
-      <h2 class="visually-hidden">${sortingFilters.headerTitle}</h2>
+      <h2 class="visually-hidden">${sortFilters.headerTitle}</h2>
       <ul class="tabs">
-        ${sortingFilters.items.map((filter) => {
+        ${sortFilters.items.map((filter) => {
       const {type, value} = filter;
 
       return (
@@ -30,15 +30,15 @@ const createTabsTemplate = (sortingFilters, defaultSortType) => {
 };
 
 export default class TabsView extends AbstractView {
-  constructor(sortingFilters, sortType) {
+  constructor(sortFilters, sortType) {
     super();
-    this._sortingFilters = sortingFilters;
+    this._sortFilters = sortFilters;
     this._sortType = sortType;
     this._sortChangeHandler = this._sortChangeHandler.bind(this);
   }
 
   getTemplate() {
-    return createTabsTemplate(this._sortingFilters, this._sortType);
+    return createTabsTemplate(this._sortFilters, this._sortType);
   }
 
   setChangeHandler(callback) {

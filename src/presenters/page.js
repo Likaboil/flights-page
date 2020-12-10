@@ -30,6 +30,7 @@ import {
   UpdateType,
   ServerErrorMessage,
   SortType,
+  SortFilter,
 } from "../const";
 
 export default class PagePresenter {

@@ -11,8 +11,8 @@ const createTabsTemplate = (sortingFilters, defaultSortType) => {
       <h2 class="visually-hidden">${sortingFilters.headerTitle}</h2>
       <ul class="tabs">
         ${sortingFilters.items.map((filter) => {
-      const type = filter.type;
-      const value = filter.value;
+      const {type, value} = filter;
+
       return (
         `<li class="tabs__item tabs__item--${type}
         ${type === defaultSortType ? ActiveTabClass.ITEM : `` }"

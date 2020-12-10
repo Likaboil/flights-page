@@ -38,7 +38,6 @@ export default class PagePresenter {
     this._container = container;
     this._flightsModel = flightsModel;
     this._filtersModel = filtersModel;
-    this._sortFilter = SortFilter;
     this._isLoading = true;
     this._pageView = new PageView();
     this._headerView = new HeaderView();
@@ -153,7 +152,7 @@ export default class PagePresenter {
   }
 
   _renderSort() {
-    this._tabsView = new TabsView(this._sortFilter, this._currentSortType);
+    this._tabsView = new TabsView(SortFilter, this._currentSortType);
     render(this._rightColumnView, this._tabsView, RenderPosition.AFTER_BEGIN);
     this._tabsView.setChangeHandler(this._sortChangeHandler);
   }

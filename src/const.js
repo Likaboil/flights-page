@@ -26,16 +26,19 @@ export const FILTERS = {
   title: `Количество пересадок`,
   items: [
     {
+      isChecked: false,
       value: `Без пересадок`,
     },
     {
+      isChecked: false,
       value: `1 пересадка`,
     },
     {
+      isChecked: false,
       value: `2 пересадки`,
-
     },
     {
+      isChecked: false,
       value: `3 пересадки`,
     }
   ],

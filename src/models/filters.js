@@ -5,4 +5,9 @@ export default class FiltersModel extends Observer {
     super();
     this._filters = filters;
   }
+
+  set(updateType, filters) {
+    this._filters = filters;
+    this._notify(updateType, filters);
+  }
 }

@@ -71,7 +71,7 @@ export default class PagePresenter {
     render(this._pageView, this._headerView, RenderPosition.BEFORE_BEGIN);
     render(this._headerView, this._logoView, RenderPosition.BEFORE_END);
     render(this._pageView, this._leftColumnView, RenderPosition.BEFORE_END);
-    render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);
+    this._renderFilters();
     render(this._pageView, this._rightColumnView, RenderPosition.BEFORE_END);
     this._renderSort();
     this._renderContent();

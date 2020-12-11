@@ -56,6 +56,7 @@ export default class PagePresenter {
 
   init() {
     this._flightsModel.add(this._handleModelEvent);
+    this._filtersModel.add(this._handleModelEvent);
     this._renderPage();
   }
 

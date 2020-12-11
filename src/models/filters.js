@@ -10,4 +10,8 @@ export default class FiltersModel extends Observer {
     this._filters = filters;
     this._notify(updateType, filters);
   }
+
+  get() {
+    return this._filters;
+  }
 }

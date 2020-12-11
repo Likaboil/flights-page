@@ -45,7 +45,6 @@ export default class PagePresenter {
     this._rightColumnView = new RightColumnView();
     this._containerView = new ContainerView();
     this._logoView = new LogoView();
-    this._filtersView = new FiltersView(this._filtersModel);
     this._flightsContainerView = new FlightsContainerView();
     this._renderFlightsItem = this._renderFlightsItem.bind(this);
     this._renderFlightsList = this._renderFlightsList.bind(this);
@@ -161,6 +160,11 @@ export default class PagePresenter {
 
   _clearSort() {
     this._remove(this._tabsView);
+  }
+
+  _renderFilters() {
+    this._filtersView = new FiltersView(this._filtersModel.get());
+    render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);
   }
 
   _updateContent() {

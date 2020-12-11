@@ -34,4 +34,9 @@ export default class FiltersView extends AbstractView {
   getTemplate() {
     return createFiltersTemplate(this._filters);
   }
+
+  setChangeHandler(callback) {
+    this._callback.filterTypeChange = callback;
+    this.getElement().addEventListener(`change`, this._filterTypeChangeHandler);
+  }
 }

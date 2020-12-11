@@ -12,7 +12,8 @@ const createFiltersTemplate = (filters) => {
       const {isChecked, value} = filter;
       return (
         `<div class="filters__wrapper">
-          <input class="filters__input" type="checkbox" value="" id="check${id}">
+          <input class="filters__input" type="checkbox" value="${value}" id="check${id}"
+          ${isChecked ? `checked` : ``}>
           <label class="filters__label" for="check${id}">${value}</label>
         </div>`
       );

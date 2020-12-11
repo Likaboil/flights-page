@@ -9,7 +9,7 @@ const createFiltersTemplate = (filters) => {
           <legend class="filters__title">${filters.title}</legend>
           ${filters.items.map((filter, index) => {
       const id = ++index;
-      const value = filter.value;
+      const {isChecked, value} = filter;
       return (
         `<div class="filters__wrapper">
           <input class="filters__input" type="checkbox" value="" id="check${id}">

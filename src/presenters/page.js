@@ -166,6 +166,7 @@ export default class PagePresenter {
     this._filtersView = new FiltersView(this._filtersModel.get());
     render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);
     this._filtersView.setChangeHandler(this._filterChangeHandler);
+    this._filters = [];
   }
 
   _updateContent() {

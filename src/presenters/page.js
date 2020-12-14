@@ -162,6 +162,16 @@ export default class PagePresenter {
     this._remove(this._tabsView);
   }
 
+  _filterChangeHandler(value) {
+    if (this._filters.includes(value)) {
+      const index = this._filters.indexOf(value);
+      this._filters.splice(index, 1);
+    } else {
+      this._filters.push(value);
+    }
+    return this._filters;
+  }
+
   _renderFilters() {
     this._filtersView = new FiltersView(this._filtersModel.get());
     render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);

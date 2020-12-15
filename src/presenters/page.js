@@ -21,11 +21,6 @@ import {
 } from '../utils/dom';
 
 import {
-  sortFlightsDuration,
-  sortFlightsPrice,
-} from '../utils/sort';
-
-import {
   LoadingMessage,
   UpdateType,
   ServerErrorMessage,
@@ -129,18 +124,6 @@ export default class PagePresenter {
   _renderMessage(title, text) {
     this._messageView = new MessageView(title, text);
     render(this._rightColumnView, this._messageView, RenderPosition.BEFORE_END);
-  }
-
-  _sortFlights() {
-    const flights = this._flightsModel.get();
-    switch (this._currentSortType) {
-      case SortType.SPEED:
-        return flights.sort(sortFlightsDuration);
-      case SortType.PRICE:
-        return flights.sort(sortFlightsPrice);
-      default:
-        return flights;
-    }
   }
 
   _sortChangeHandler(sortType) {

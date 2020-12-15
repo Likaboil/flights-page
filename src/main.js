@@ -11,6 +11,7 @@ const rootElement = document.querySelector(`#root`);
 const filtersModel = new FiltersModel();
 const flightsModel = new FlightsModel();
 
+filtersModel.set(UpdateType.MINOR, FILTERS);
 
 Api.getFlights()
   .then((flights) => {

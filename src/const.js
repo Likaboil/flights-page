@@ -3,9 +3,9 @@ export const LoadingMessage = {
   TEXT: `Пожалуйста, подождите..`,
 };
 
-export const ErrorMessage = {
-  TITLE: `Произошла ошибка`,
-  TEXT: `Рейсы не найдены`,
+export const NoFlightsMessage = {
+  TITLE: `Нет подходящих билетов.`,
+  TEXT: `Пожалуйста, используйте другие фильтры`,
 };
 
 export const ServerErrorMessage = {

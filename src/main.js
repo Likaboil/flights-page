@@ -4,6 +4,7 @@ import './style.scss';
 import {default as PagePresenter} from './presenters/page.js';
 import {FILTERS, UpdateType, ServerErrorMessage} from './const';
 import {default as FlightsModel} from './models/flights';
+import {default as FiltersModel} from './models/filters';
 import {default as Api} from './api/api';
 
 const rootElement = document.querySelector(`#root`);

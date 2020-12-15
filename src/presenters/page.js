@@ -104,6 +104,12 @@ export default class PagePresenter {
     this._remove(this._messageView);
   }
 
+  _getflights() {
+    const filteredFlights = filter(this._flightsModel.get(), this._filters);
+
+    return sort(filteredFlights, this._currentSortType);
+  }
+
   _renderFlightsList() {
     const flights = this._sortFlights();
     this._fragment = new DocumentFragment();

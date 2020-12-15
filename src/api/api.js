@@ -1,5 +1,5 @@
 import {generateFlights} from '../mocks/flights-generator';
-import {adaptFlightsToClient} from '../adapter/flights';
+import {adaptFlightsToClient} from '../adapter/index';
 
 const DELAY_MS = 2000;
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));

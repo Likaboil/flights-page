@@ -1,7 +1,6 @@
 import 'normalize.css';
 import './style.scss';
 
-import {default as PagePresenter} from './presenters/page.js';
 import {
   FILTERS,
   UpdateType,
@@ -14,6 +13,8 @@ import {
 } from './models/index';
 
 import {default as Api} from './api/api';
+import {PagePresenter} from './presenters/index';
+
 
 const rootElement = document.querySelector(`#root`);
 const filtersModel = new FiltersModel();

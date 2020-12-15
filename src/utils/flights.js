@@ -11,7 +11,7 @@ export const sortFlightsDuration = (flight1, flight2) => {
 
 export const sortFlightsPrice = (flight1, flight2) => flight1.price - flight2.price;
 
-export const sort = (flights, sortType) => {
+export const sortFlights = (flights, sortType) => {
   switch (sortType) {
     case SortType.SPEED:
       return flights.sort(sortFlightsDuration);
@@ -22,7 +22,7 @@ export const sort = (flights, sortType) => {
   }
 };
 
-export const filter = (flights, filters) => {
+export const filterFlights = (flights, filters) => {
   if (filters.length !== 0) {
     return flights.slice().filter((flight) => filters.includes(getTransferAmountLabel(flight.directFlight.transferPoints)));
   }

@@ -30,8 +30,8 @@ import {
 } from "../../const";
 
 import {
-  filter,
-  sort,
+  filterFlights,
+  sortFlights,
 } from '../../utils/flights';
 
 export default class PagePresenter {
@@ -106,8 +106,8 @@ export default class PagePresenter {
   }
 
   _getflights() {
-    const filteredFlights = filter(this._flightsModel.get(), this._filters);
-    return sort(filteredFlights, this._currentSortType);
+    const filteredFlights = filterFlights(this._flightsModel.get(), this._filters);
+    return sortFlights(filteredFlights, this._currentSortType);
   }
 
   _renderFlightsList() {

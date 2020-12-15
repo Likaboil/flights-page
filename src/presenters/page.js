@@ -111,7 +111,7 @@ export default class PagePresenter {
   }
 
   _renderFlightsList() {
-    const flights = this._sortFlights();
+    const flights = this._getflights();
     this._fragment = new DocumentFragment();
     this._flightsListView = new FlightsListView();
 

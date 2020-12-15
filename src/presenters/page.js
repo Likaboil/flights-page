@@ -28,6 +28,11 @@ import {
   SortFilter,
 } from "../const";
 
+import {
+  filter,
+  sort,
+} from '../utils/flights';
+
 export default class PagePresenter {
   constructor(container, flightsModel, filtersModel) {
     this._container = container;

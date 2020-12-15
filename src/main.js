@@ -8,7 +8,7 @@ import {default as FiltersModel} from './models/filters';
 import {default as Api} from './api/api';
 
 const rootElement = document.querySelector(`#root`);
-const filtersModel = FILTERS;
+const filtersModel = new FiltersModel();
 const flightsModel = new FlightsModel();
 
 

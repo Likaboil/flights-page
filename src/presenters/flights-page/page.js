@@ -12,13 +12,13 @@ import {
   FlightsListView,
   FlightsListItemView,
   CardFlightView
-} from '../views/';
+} from '../../views';
 
 import {
   clearElement,
   render,
   RenderPosition
-} from '../utils/dom';
+} from '../../utils/dom';
 
 import {
   LoadingMessage,
@@ -27,12 +27,12 @@ import {
   SortType,
   SortFilter,
   NoFlightsMessage,
-} from "../const";
+} from "../../const";
 
 import {
   filter,
   sort,
-} from '../utils/flights';
+} from '../../utils/flights';
 
 export default class PagePresenter {
   constructor(container, flightsModel, filtersModel) {

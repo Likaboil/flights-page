@@ -153,7 +153,7 @@ export default class PagePresenter {
     } else {
       this._filters.push(value);
     }
-    return this._filters;
+    this._filtersModel.set(UpdateType.MINOR, this._filters);
   }
 
   _renderFilters() {

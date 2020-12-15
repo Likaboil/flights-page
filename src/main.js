@@ -2,7 +2,12 @@ import 'normalize.css';
 import './style.scss';
 
 import {default as PagePresenter} from './presenters/page.js';
-import {FILTERS, UpdateType, ServerErrorMessage} from './const';
+import {
+  FILTERS,
+  UpdateType,
+  ServerErrorMessage,
+} from './const';
+
 import {
   FlightsModel,
   FiltersModel,

@@ -162,8 +162,8 @@ export default class PagePresenter {
   }
 
   _filterChangeHandler(value) {
-    if (this._filters.includes(value)) {
-      const index = this._filters.indexOf(value);
+    const index = this._filters.indexOf(value);
+    if (index !== -1) {
       this._filters.splice(index, 1);
     } else {
       this._filters.push(value);

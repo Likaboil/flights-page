@@ -26,6 +26,7 @@ import {
   ServerErrorMessage,
   SortType,
   SortFilter,
+  NoFlightsMessage,
 } from "../const";
 
 import {
@@ -106,12 +107,15 @@ export default class PagePresenter {
 
   _getflights() {
     const filteredFlights = filter(this._flightsModel.get(), this._filters);
-
     return sort(filteredFlights, this._currentSortType);
   }
 
   _renderFlightsList() {
     const flights = this._getflights();
+    if (flights.length === 0) {
+      this._renderMessage(NoFlightsMessage.TITLE, NoFlightsMessage.TEXT);
+    }
+
     this._fragment = new DocumentFragment();
     this._flightsListView = new FlightsListView();
 

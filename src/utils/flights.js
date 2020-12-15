@@ -1,4 +1,5 @@
 import {getFlightDurationInMs} from './date';
+import {getTransferAmountLabel} from './utils';
 import {SortType} from '../const';
 
 export const sortFlightsDuration = (flight1, flight2) => {
@@ -19,4 +20,11 @@ export const sort = (flights, sortType) => {
     default:
       return flights;
   }
+};
+
+export const filter = (flights, filters) => {
+  if (filters.length !== 0) {
+    return flights.slice().filter((flight) => filters.includes(getTransferAmountLabel(flight.directFlight.transferPoints)));
+  }
+  return flights;
 };

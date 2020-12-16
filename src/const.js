@@ -1,8 +1,16 @@
-export const MESSAGE = {
-  LOADING: {
-    TITLE: `Данные обрабатываются..`,
-    TEXT: `Пожалуйста, подождите..`,
-  },
+export const LoadingMessage = {
+  TITLE: `Данные обрабатываются..`,
+  TEXT: `Пожалуйста, подождите..`,
+};
+
+export const NoFlightsMessage = {
+  TITLE: `Нет подходящих билетов.`,
+  TEXT: `Пожалуйста, используйте другие фильтры`,
+};
+
+export const ServerErrorMessage = {
+  TITLE: `Ошибка загрузки данных.`,
+  TEXT: `Пожалуйста, перезагрузите страницу`,
 };
 
 export const NO_TRANSFER_AMOUNT_LABEL = `Без пересадок`;
@@ -18,22 +26,25 @@ export const FILTERS = {
   title: `Количество пересадок`,
   items: [
     {
+      isChecked: false,
       value: `Без пересадок`,
     },
     {
+      isChecked: false,
       value: `1 пересадка`,
     },
     {
+      isChecked: false,
       value: `2 пересадки`,
-
     },
     {
+      isChecked: false,
       value: `3 пересадки`,
     }
   ],
 };
 
-export const SORTING_FILTERS = {
+export const SortFilter = {
   headerTitle: `Сортировка`,
   items: [
     {
@@ -45,4 +56,16 @@ export const SORTING_FILTERS = {
       value: `Самый быстрый`
     }
   ],
+};
+
+export const SortType = {
+  PRICE: `cheaper`,
+  SPEED: `faster`,
+};
+
+export const UpdateType = {
+  INIT: `INIT`,
+  ERROR: `ERROR`,
+  MAJOR: `MAJOR`,
+  MINOR: `MINOR`,
 };

@@ -1,4 +1,4 @@
-import {AbstractView} from '../index';
+import {AbstractView} from '../../index';
 
 const createFlightsContainerTemplate = () => {
   return `<div class="flights"></div>`;

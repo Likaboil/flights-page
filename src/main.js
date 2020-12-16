@@ -1,14 +1,36 @@
 import 'normalize.css';
 import './style.scss';
 
-import {default as PagePresenter} from './presenter/page.js';
-import {generateFlights} from './mocks/flights-generator';
-import {adaptFlightsToClient} from './adapter/flights';
-import {FILTERS, SORTING_FILTERS} from './const';
+import {
+  FILTERS,
+  UpdateType,
+  ServerErrorMessage,
+} from './const';
+
+import {
+  FlightsModel,
+  FiltersModel,
+} from './models/index';
+
+import {default as Api} from './api/api';
+import {PagePresenter} from './presenters/index';
 
 const rootElement = document.querySelector(`#root`);
-const FLIGHTS_MODEL = adaptFlightsToClient(generateFlights(5));
-const FILTERS_MODEL = FILTERS;
-const SORT_MODEL = SORTING_FILTERS;
-const pagePresenter = new PagePresenter(rootElement, FLIGHTS_MODEL, FILTERS_MODEL, SORT_MODEL);
+
+const filtersModel = new FiltersModel();
+const flightsModel = new FlightsModel();
+
+filtersModel.set(UpdateType.MINOR, FILTERS);
+
+// получение данных с задержкой(имитация сервера)
+Api.getFlights()
+  .then((flights) => {
+    flightsModel.set(UpdateType.INIT, flights);
+  })
+  .catch(() => {
+    // отслеживание возможных ошибок при получении данных от сервера
+    flightsModel.setError(UpdateType.ERROR, ServerErrorMessage);
+  });
+
+const pagePresenter = new PagePresenter(rootElement, flightsModel, filtersModel);
 pagePresenter.init();

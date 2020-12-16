@@ -2,7 +2,7 @@ import {AbstractView} from '../index';
 import {splitPrice, getTransferAmountLabel} from '../../utils/utils';
 import {getFormatDateToHHMM, getFlightDurationLabel} from '../../utils/date';
 
-const createCardTemplate = (flight) => {
+const createCardFlightTemplate = (flight) => {
   const price = splitPrice(flight.price);
 
   const airCompanyLogo = flight.airCompanyLogo;
@@ -62,12 +62,12 @@ const createCardTemplate = (flight) => {
   );
 };
 
-export default class CardView extends AbstractView {
+export default class CardFlightView extends AbstractView {
   constructor(flight) {
     super();
     this._flight = flight;
   }
   getTemplate() {
-    return createCardTemplate(this._flight);
+    return createCardFlightTemplate(this._flight);
   }
 }

@@ -41,6 +41,7 @@ export default class TabsView extends AbstractView {
     return createTabsTemplate(this._sortFilters, this._sortType);
   }
 
+  // установка обработчика событий, callback передает type фильтра сортировки
   setChangeHandler(callback) {
     this._callback.sortChangeHandler = callback;
     this.getElement().addEventListener(`click`, this._sortChangeHandler);

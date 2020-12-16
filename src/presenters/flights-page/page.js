@@ -36,10 +36,10 @@ import {
 
 export default class PagePresenter {
   constructor(container, flightsModel, filtersModel) {
+    // необходимые свойства для работы презентора
     this._container = container;
     this._flightsModel = flightsModel;
     this._filtersModel = filtersModel;
-    this._isLoading = true;
     this._pageView = new PageView();
     this._headerView = new HeaderView();
     this._leftColumnView = new LeftColumnView();
@@ -47,23 +47,32 @@ export default class PagePresenter {
     this._containerView = new ContainerView();
     this._logoView = new LogoView();
     this._flightsContainerView = new FlightsContainerView();
+
+    // необходимые методы с привязкой к контексту
     this._renderFlightsItem = this._renderFlightsItem.bind(this);
     this._renderFlightsList = this._renderFlightsList.bind(this);
     this._handleModelEvent = this._handleModelEvent.bind(this);
     this._sortChangeHandler = this._sortChangeHandler.bind(this);
     this._filterChangeHandler = this._filterChangeHandler.bind(this);
+
+    // свойства по умолчанию
     this._currentSortType = SortType.PRICE;
+    this._isLoading = true;
   }
 
   init() {
+    // добавление обзерверов
     this._flightsModel.add(this._handleModelEvent);
     this._filtersModel.add(this._handleModelEvent);
+
     this._renderPage();
   }
 
   destroy() {
+    // удаление обзерверов
     this._flightsModel.remove(this._handleModelEvent);
     this._filtersModel.remove(this._handleModelEvent);
+
     this._clearPage();
   }
 
@@ -93,6 +102,8 @@ export default class PagePresenter {
 
   _renderContent() {
     render(this._rightColumnView, this._flightsContainerView, RenderPosition.BEFORE_END);
+
+    // проверка на состояние загрузки страницы
     if (this._isLoading) {
       this._renderMessage(LoadingMessage.TITLE, LoadingMessage.TEXT);
       return;
@@ -111,11 +122,13 @@ export default class PagePresenter {
   }
 
   _renderFlightsList() {
+    // при рендере используются данные, прошедшие фильтрацию и сортировку
     const flights = this._getflights();
     if (flights.length === 0) {
       this._renderMessage(NoFlightsMessage.TITLE, NoFlightsMessage.TEXT);
     }
 
+    // _fragment - для добавления карточек в рендер списка карточек
     this._fragment = new DocumentFragment();
     this._flightsListView = new FlightsListView();
 
@@ -124,6 +137,7 @@ export default class PagePresenter {
     render(this._flightsListView, this._fragment, RenderPosition.BEFORE_END);
     render(this._flightsContainerView, this._flightsListView, RenderPosition.BEFORE_END);
 
+    // после каждого рендера списка _fragment очищается, чтобы не хранить в себе старые данные
     this._fragment = null;
   }
 
@@ -154,6 +168,8 @@ export default class PagePresenter {
   _renderSort() {
     this._tabsView = new TabsView(SortFilter, this._currentSortType);
     render(this._rightColumnView, this._tabsView, RenderPosition.AFTER_BEGIN);
+
+    // установка callback на изменение, передается обработчиком событий во view
     this._tabsView.setChangeHandler(this._sortChangeHandler);
   }
 
@@ -174,6 +190,8 @@ export default class PagePresenter {
   _renderFilters() {
     this._filtersView = new FiltersView(this._filtersModel.get());
     render(this._leftColumnView, this._filtersView, RenderPosition.BEFORE_END);
+
+    // установка callback на изменение, передается обработчиком событий во view
     this._filtersView.setChangeHandler(this._filterChangeHandler);
     this._filters = [];
   }
@@ -191,6 +209,7 @@ export default class PagePresenter {
   }
 
   _handleModelEvent(updateType) {
+    // следит за состоянием моделей
     switch (updateType) {
       case UpdateType.INIT:
         this._isLoading = false;
